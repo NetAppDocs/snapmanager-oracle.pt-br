@@ -1,0 +1,32 @@
+---
+permalink: windows/task_post_rollback_tasks.html 
+sidebar: sidebar 
+keywords: perform, additional, step, rollback, repository, database, snapmanager, post, task 
+summary: Você deve executar algumas etapas adicionais depois de reverter um banco de dados de repositório e fazer o downgrade do host SnapManager do SnapManager 3,2 para o SnapManager 3,0, para exibir as programações criadas na versão anterior do banco de dados de repositório. 
+---
+= Tarefas pós-reversão
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você deve executar algumas etapas adicionais depois de reverter um banco de dados de repositório e fazer o downgrade do host SnapManager do SnapManager 3,2 para o SnapManager 3,0, para exibir as programações criadas na versão anterior do banco de dados de repositório.
+
+. Navegue até C: Arquivos de programas/NetApp/SnapManager para repositórios.
++
+O diretório repositórios pode conter dois arquivos para cada repositório. O nome do arquivo com o sinal de número ( no) é criado usando o SnapManager 3,1 ou posterior e o nome do arquivo com o hífen (-) é criado usando o SnapManager 3,0.
+
++
+Os nomes dos arquivos podem ser os seguintes:
+
++
+** Repositório nº SMO300a 1521 nº SMOREPO1 nº 10.72.197.141
+** repositório-smo300a-smorepo1-10.72.197.141-1521
+
+
+. Substitua o sinal de número ( no) no nome do arquivo pelo hífen (-).
++
+O nome do arquivo que tinha o sinal de número ( no), agora contém hífen (-): Repositório-SMO300a-SMOREPO1-10.72.197.141-1521.
+
+

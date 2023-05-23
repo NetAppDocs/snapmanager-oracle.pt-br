@@ -1,0 +1,50 @@
+---
+permalink: windows/reference_the_smosmsap_server_start_command.html 
+sidebar: sidebar 
+keywords: command, host, server, run, oracle, software, smo 
+summary: Este comando inicia o servidor host que executa o software SnapManager para Oracle. 
+---
+= O comando smo_Server start
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Este comando inicia o servidor host que executa o software SnapManager para Oracle.
+
+
+
+== Sintaxe
+
+[listing]
+----
+
+        smo_server start
+\[-quiet \| -verbose\]
+----
+
+
+== Parâmetros
+
+* *-silencioso*
++
+Especifica que somente mensagens de erro são exibidas no console. O padrão é exibir mensagens de erro e aviso.
+
+* *-verbose*
++
+Especifica que mensagens de erro, aviso e informações são exibidas no console.
+
+
+
+
+
+== Exemplo de comando
+
+O exemplo a seguir inicia o servidor host.
+
+[listing]
+----
+smo_server start
+SMO-17100: SnapManager Server started on secure port 25204 with PID 11250
+----

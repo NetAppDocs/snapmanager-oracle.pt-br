@@ -1,0 +1,71 @@
+---
+permalink: windows/reference_the_smo_notification_removesummarynotification_command.html 
+sidebar: sidebar 
+keywords: command, disable, summary, notification, multiple, profile, repository, database, smo, remove-summary-notification 
+summary: Este comando desativa a notificação de resumo para vários perfis em um banco de dados de repositório. 
+---
+= O comando smo notification remove-summary-notification
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Este comando desativa a notificação de resumo para vários perfis em um banco de dados de repositório.
+
+
+
+== Sintaxe
+
+[listing]
+----
+
+        smo notification remove-summary-notification
+-repository
+-dbname repo_service_name
+-port repo_port
+-host repo_host
+-login -username repo_username
+\[-quiet \| -verbose\]
+----
+
+
+== Parâmetros
+
+* *-repositório*
++
+As opções que seguem -repositório especificam os detalhes do banco de dados para o repositório.
+
+* *-port repo_port*
++
+Especifica o número da porta TCP usado para acessar o banco de dados que armazena o repositório.
+
+* *-dbname repo_service_name*
++
+Especifica o nome do banco de dados que armazena o repositório. Use o nome global ou o SID.
+
+* *-host repo_host*
++
+Especifica o nome ou endereço IP do computador host no qual o banco de dados do repositório é executado.
+
+* *-login repo_username*
++
+Especifica o nome de login necessário para acessar o banco de dados que armazena o repositório.
+
+* *-silencioso*
++
+Exibe apenas mensagens de erro no console. O padrão é exibir mensagens de erro e aviso.
+
+* *-verbose*
++
+Exibe mensagens de erro, aviso e informativas no console.
+
+
+
+O exemplo a seguir desativa a notificação de resumo para vários perfis em um banco de dados de repositório.
+
+[listing]
+----
+
+smo notification remove-summary-notification –repository –port 1521 –dbname repo2 –host 10.72.197.133 –login -username oba5
+----

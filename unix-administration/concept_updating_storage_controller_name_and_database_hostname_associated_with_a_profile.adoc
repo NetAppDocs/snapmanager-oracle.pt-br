@@ -1,0 +1,14 @@
+---
+permalink: unix-administration/concept_updating_storage_controller_name_and_database_hostname_associated_with_a_profile.html 
+sidebar: sidebar 
+keywords: snapmanager, storage, system, host, name, address, target, database 
+summary: O SnapManager 3,3 ou posterior permite atualizar o nome do host do sistema de armazenamento ou o endereço do sistema de armazenamento e o nome do host do banco de dados de destino associado a um perfil do SnapManager. 
+---
+= Atualizando o nome do sistema de storage e o nome do host do banco de dados de destino associados a um perfil
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O SnapManager 3,3 ou posterior permite atualizar o nome do host do sistema de armazenamento ou o endereço do sistema de armazenamento e o nome do host do banco de dados de destino associado a um perfil do SnapManager.

@@ -1,0 +1,14 @@
+---
+permalink: unix-administration/task_database_restoration_from_backup.html 
+sidebar: sidebar 
+keywords: active, content, payroll, database, accidental, lost, destroy, snapmanager, netapp, management, console, protection 
+summary: Se o conteúdo ativo do banco de dados de folha de pagamento for acidentalmente perdido ou destruído, o SnapManager e o recurso de proteção de dados do console de gerenciamento do NetApp suportam a restauração desses dados de um backup local ou de um storage secundário. 
+---
+= Restauração de banco de dados a partir de backup
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se o conteúdo ativo do banco de dados de folha de pagamento for acidentalmente perdido ou destruído, o SnapManager e o recurso de proteção de dados do console de gerenciamento do NetApp suportam a restauração desses dados de um backup local ou de um storage secundário.

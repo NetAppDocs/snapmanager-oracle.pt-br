@@ -1,0 +1,104 @@
+---
+permalink: unix-administration/task_protecting_database_backups_on_secondary_storage.html 
+sidebar: sidebar 
+keywords: snapmanager, protect, backup, copies, secondary, tertiary, storage, system, smo 
+summary: Você pode usar o SnapManager para proteger as cópias de backup em sistemas de storage secundário ou terciário. 
+---
+= Proteção de backups de bancos de dados em storage secundário ou terciário
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode usar o SnapManager para proteger as cópias de backup em sistemas de storage secundário ou terciário.
+
+. Introduza o seguinte comando:
+`smo backup create -profile profile_name {[-full {-online | -offline | -auto} [-retain {-hourly | -daily | -weekly | -monthly | -unlimited}] [-verify] | [-data [[-filesfiles [files]] | [-tablespaces-tablespaces [-tablespaces]] [-datalabellabel] {-online | -offline | -auto} [-retain {-hourly | [-daily | -weekly | -monthly | -unlimited]} [-verify] | [-archivelogs [-labellabel] [-commentcomment] [-snapvaultlabelSnapVault_label][-protect | -noprotect | -protectnow] [-backup-destpath1 [,[path2]]] [-exclude-destpath1 [,path2]]] [-prunelogs {-all | -untilSCNuntilSCN | -until-date yyyy-MM-dd:HH:mm:ss | -before {-months | -days | -weeks | -hours}} -prune-destprune_dest1,[prune_dest2]] [-taskspectaskspec]} [-dump] [-force] [-quiet | -verbose]`
++
+|===
+| Se você quiser... | Então faça isso... 
+
+
+ a| 
+* Criar um backup de um banco de dados online ou offline, em vez de permitir que o SnapManager gerencie se ele está on-line ou off-line*
+ a| 
+Especifique a opção -off-line ou -online para criar um backup do banco de dados off-line ou banco de dados on-line. Se você usar a opção -offline ou -online, não poderá usar a opção -auto.
+
+
+
+ a| 
+*Deixe o SnapManager gerenciar o backup de um banco de dados, independentemente de estar on-line ou off-line*
+ a| 
+Especifique a opção -auto. Se você usar a opção -auto, não poderá usar a opção -offline ou -online.
+
+
+
+ a| 
+*Adicione um comentário sobre o backup*
+ a| 
+Especifique a opção -comment, seguida da cadeia de carateres de descrição.
+
+
+
+ a| 
+*Force o banco de dados para o estado em que você especificou para fazer o backup, independentemente do estado em que está atualmente*
+ a| 
+Especifique a opção -force.
+
+
+
+ a| 
+*Verifique o backup no momento da criação*
+ a| 
+Especifique a opção -Verify.
+
+
+
+ a| 
+* Criar um backup no armazenamento secundário*
+ a| 
+Especifique a opção -Protect.
+
+** Se você estiver usando o ONTAP e quiser proteger o backup imediatamente para o storage secundário, especifique a opção -proteger.
++
+
+NOTE: A opção -protectnow não é aplicável no Clustered Data ONTAP.
+
+** Se você estiver usando o Data ONTAP operando no modo 7 e quiser proteger o backup imediatamente para o armazenamento secundário substituindo o cronograma de proteção do Gerenciador, especifique a opção -protectnow.
+** Para impedir o backup para armazenamento secundário, especifique a opção -noprotect. Se você estiver usando o ONTAP e tiver selecionado a política de proteção _SnapManager_cDOT_Vault_ ao criar o perfil, você deverá especificar a opção -snapvaultlabel. Você deve fornecer o rótulo SnapMirror que você especificou nas regras da política SnapMirror enquanto configura o relacionamento SnapVault como o valor.
+
+
+
+
+ a| 
+*Especifique os valores da classe de retenção*
+ a| 
+Especifique a opção -reter e indique se o backup deve ser retido dependendo de uma das seguintes classes de retenção:
+
+** -por hora
+** -diariamente
+** -semanalmente
+** -mensal
+** -Ilimitado se você não especificar a classe de retenção, o SnapManager usa -hora por padrão.
+
+
+|===
+
+
+
+
+== Exemplos
+
+O comando a seguir protege um backup de banco de dados:
+
+[listing]
+----
+smo backup create -profile PAYDB -protect -retain -daily -full auto -label full_bkup_sales
+----
+O seguinte comando protege imediatamente um backup de banco de dados:
+
+[listing]
+----
+smo backup create -profile PAYDB -protectnow -retain -daily -full auto -label full_bkup_sales
+----

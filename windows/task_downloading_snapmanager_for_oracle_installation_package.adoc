@@ -1,0 +1,49 @@
+---
+permalink: windows/task_downloading_snapmanager_for_oracle_installation_package.html 
+sidebar: sidebar 
+keywords: download, snapmanager, oracle, installation, package, netapp, support, site 
+summary: Você pode baixar o pacote de instalação do SnapManager para Oracle no site de suporte da NetApp. 
+---
+= Download do pacote de instalação do SnapManager para Oracle
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode baixar o pacote de instalação do SnapManager para Oracle no site de suporte da NetApp.
+
+. Faça login no site de suporte da NetApp.
+. Na página do site de suporte da NetApp, clique em *Downloads* > *Software*.
+. Na tabela Download de software, vá para a linha de produtos SnapManager e selecione *Oracle (Windows)* na lista suspensa Selecionar plataforma.
+. Clique em *Go*.
++
+As versões do SnapManager estão listadas.
+
+. Clique em *Exibir e Baixar* para a versão do SnapManager que você deseja instalar.
++
+É apresentada a página de descrição.
+
++
+
+NOTE: Você deve ler as informações disponíveis nesta página.
+
+. Na parte inferior desta página, clique em *continuar*.
++
+É apresentada a página do contrato de licença.
+
++
+
+NOTE: Você deve ler as informações disponíveis nesta página.
+
+. Clique em *aceitar*.
++
+É apresentada a página de transferência.
+
+. Baixe o pacote de instalação para o seu host.
++
+Você pode baixar o arquivo de instalação para qualquer local na máquina em que você deseja instalar o SnapManager para Oracle.
+
+
+
+http://mysupport.netapp.com/["Site de suporte da NetApp: Mysupport.NetApp.com"]

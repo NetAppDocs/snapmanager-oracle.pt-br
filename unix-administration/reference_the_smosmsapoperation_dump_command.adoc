@@ -1,0 +1,71 @@
+---
+permalink: unix-administration/reference_the_smosmsapoperation_dump_command.html 
+sidebar: sidebar 
+keywords: run, operation, dump, command, create, jar, file, diagnostic, information, smo 
+summary: Você pode executar o comando Operation dump para criar um arquivo JAR que contenha informações de diagnóstico sobre uma operação. 
+---
+= O comando dump da operação smo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode executar o comando Operation dump para criar um arquivo JAR que contenha informações de diagnóstico sobre uma operação.
+
+
+
+== Sintaxe
+
+[listing]
+----
+
+        smo operation dump
+-profile profile_name
+\[-label label_name \| -id guid\]
+\[-quiet \| -verbose\]
+----
+
+
+== Parâmetros
+
+* *-profile profile_name*
++
+Especifica o perfil para o qual você deseja criar os arquivos de despejo. O perfil contém o identificador da base de dados e outras informações da base de dados.
+
+* *-label label_name*
++
+Cria arquivos de despejo para a operação e atribui o rótulo especificado.
+
+* *-id guid*
++
+Cria arquivos de despejo para a operação com o GUID especificado. O GUID é gerado pelo SnapManager quando a operação começa.
+
+* *-silencioso*
++
+Exibe apenas mensagens de erro no console. O padrão é exibir mensagens de erro e aviso.
+
+* *-verbose*
++
+Exibe mensagens de erro, aviso e informativas no console.
+
+
+
+
+
+== Exemplo
+
+O exemplo a seguir cria o arquivo dump para o backup:
+
+[listing]
+----
+smo operation dump -profile SALES1
+-id 8abc01ec0e78f3e2010e78f3fdd00001
+----
+[listing]
+----
+Dump file created Path:/userhomedirectory/.netapp/smo/3.3/smo_dump_8abc01ec0e78f3e2010e78f3fdd00001.jar
+----
+*Informações relacionadas*
+
+xref:concept_dump_files.adoc[Despejar arquivos]

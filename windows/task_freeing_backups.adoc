@@ -1,0 +1,32 @@
+---
+permalink: windows/task_freeing_backups.html 
+sidebar: sidebar 
+keywords: free, backup, delete, snapshot, copies, copy, deleting, metadata, fuction, space, smo 
+summary: Você pode liberar backups, o que exclui as cópias Snapshot sem excluir os metadados do backup. Esta função liberta o espaço ocupado pelo backup. Você pode usar o comando smo backup free para liberar os backups. 
+---
+= Liberando backups
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode liberar backups, o que exclui as cópias Snapshot sem excluir os metadados do backup. Esta função liberta o espaço ocupado pelo backup. Você pode usar o comando smo backup free para liberar os backups.
+
+Para que um backup seja qualificado para liberar, você deve garantir o seguinte:
+
+* A cópia de segurança foi bem-sucedida
+* A cópia de segurança não deve ser montada
+* O backup não tem clones
+* O backup não deve ser retido usando uma política de retenção ilimitada
+* A cópia de segurança ainda não foi libertada
+
+
+Você pode especificar a opção -dump como um parâmetro opcional para coletar os arquivos de despejo após a operação livre de backup bem-sucedida ou com falha.
+
+. Digite o seguinte comando: smo backup free -profileprofile_name [data | -archivelogs] | -idID | -all] -force [-dump] [-quiet] [-force] [-force]
+
+
+*Informações relacionadas*
+
+xref:reference_the_smosmsapbackup_free_command.adoc[O comando smo backup free]

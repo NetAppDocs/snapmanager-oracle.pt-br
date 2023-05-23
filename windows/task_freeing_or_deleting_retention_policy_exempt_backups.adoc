@@ -1,0 +1,27 @@
+---
+permalink: windows/task_freeing_or_deleting_retention_policy_exempt_backups.html 
+sidebar: sidebar 
+keywords: backup, retention, class, unlimited, delete, freed, directly, assign, eligible, deletion, free, deleting, exempy 
+summary: 'Backups com a classe de retenção "ilimitada" não podem ser excluídos ou liberados diretamente. Para excluir ou liberar esses backups, primeiro é necessário atribuir outra classe de retenção, como por hora, diária, semanal ou mensal. Para excluir ou liberar um backup que esteja isento da política de retenção, primeiro você deve atualizar o backup para torná-lo elegível para exclusão ou libertá-lo.' 
+---
+= Liberar ou excluir backups isentos de política de retenção
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Backups com a classe de retenção "ilimitada" não podem ser excluídos ou liberados diretamente. Para excluir ou liberar esses backups, primeiro é necessário atribuir outra classe de retenção, como por hora, diária, semanal ou mensal. Para excluir ou liberar um backup que esteja isento da política de retenção, primeiro você deve atualizar o backup para torná-lo elegível para exclusão ou libertá-lo.
+
+. Para atualizar o backup para torná-lo elegível para exclusão pela política de retenção, digite este comando: smo backup update -profileprofile_name [data | -archivelogs] | -idd] -ret [-Hourly | -daily | -Weekly | -monthly]
+. Depois de atualizar o backup para que ele seja elegível para exclusão, você pode excluir o backup ou os recursos de backup gratuitos.
++
+** Para excluir o backup, digite este comando: smo backup delete -profileprofile_name [data | -archivelogs] | -idID | -all]
+** Para liberar os recursos de backup, em vez de excluir o backup, digite este comando:smo backup free -profileprofile_name [data | -archivelogs] | -idID | -all] [-force] [ -dump] [-quiet | -verbose]
+
+
+
+
+*Informações relacionadas*
+
+xref:reference_the_smosmsapbackup_update_command.adoc[O comando smo backup update]

@@ -1,0 +1,70 @@
+---
+permalink: unix-administration/reference_the_smosmsapprofile_verify_command.html 
+sidebar: sidebar 
+keywords: run, profile, verify, command, verify, set, up, database, smo 
+summary: Você pode executar o comando verificar perfil para verificar a configuração do perfil. Você deve montar o banco de dados antes de executar este comando. 
+---
+= O comando smo profile check
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode executar o comando verificar perfil para verificar a configuração do perfil. Você deve montar o banco de dados antes de executar este comando.
+
+
+
+== Sintaxe
+
+[listing]
+----
+
+        smo profile verify
+-profile profile_name
+\[-quiet \| -verbose\]
+----
+
+
+== Parâmetros
+
+* *-perfil*
++
+Especifica o perfil a ser verificado. O perfil contém o identificador da base de dados e outras informações da base de dados.
+
+* *-silencioso*
++
+Exibe apenas mensagens de erro no console. O padrão é exibir mensagens de erro e aviso.
+
+* *-verbose*
++
+Exibe mensagens de erro, aviso e informativas no console.
+
+
+
+
+
+== Exemplo
+
+O exemplo a seguir verifica o perfil:
+
+[listing]
+----
+smo profile verify -profile test_profile  -verbose
+[ INFO] SMO-07431: Saving starting state of the database: racb1(OPEN).
+[ INFO] SMO-07431: Saving starting state of the database: racb2(SHUTDOWN), racb1(OPEN).
+[ INFO] SD-00019: Discovering storage resources for all system devices.
+[ INFO] SD-00020: Finished storage discovery for all system devices.
+[ INFO] SD-00019: Discovering storage resources for all system devices.
+[ INFO] SD-00020: Finished storage discovery for all system devices.
+[ INFO] SD-00019: Discovering storage resources for all system devices.
+[ INFO] SD-00020: Finished storage discovery for all system devices.
+[ INFO] SMO-05070: Database profile test_profile is eligible for fast restore.
+[ INFO] SMO-07433: Returning the database to its initial state: racb2(SHUTDOWN), racb1(OPEN).
+[ INFO] SMO-13048: Profile Verify Operation Status: SUCCESS
+[ INFO] SMO-13049: Elapsed Time: 0:04:14.919
+Operation Id [Nfffde14ac88cd1a21597c37e8d21fe90] succeeded.
+----
+*Informações relacionadas*
+
+xref:task_verifying_profiles.adoc[Verificando perfis]

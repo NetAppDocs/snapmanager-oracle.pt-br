@@ -1,0 +1,70 @@
+---
+permalink: unix-administration/task_restoring_backups_from_secondary_storage.html 
+sidebar: sidebar 
+keywords: restore, protect, backup, secondary, storage, copy, data, primary, storage 
+summary: Você pode restaurar backups protegidos do storage secundário e escolher como deseja copiar os dados de volta para o storage primário. 
+---
+= Restaurar backups do storage secundário
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode restaurar backups protegidos do storage secundário e escolher como deseja copiar os dados de volta para o storage primário.
+
+Você pode usar o comando backup restore com a opção -from-secundary para restaurar os dados do armazenamento secundário. Se você não especificar a opção -de-secundária, o SnapManager restaurará os dados das cópias Snapshot no storage primário.
+
+Não é possível usar a opção -de-secundária se o backup existir no storage primário; o backup primário deve ser liberado antes que um backup possa ser restaurado do storage secundário. Se você usar um volume temporário, você deve especificar o volume usando a opção -temp-volume.
+
+Você deve especificar a opção -copy-id sempre que especificar a opção -from-secundary. Se houver mais de um backup no sistema de armazenamento secundário, a opção -copy-id é usada para especificar qual cópia de backup no armazenamento secundário deve ser usada para a operação de restauração.
+
+
+NOTE: Se você estiver usando o Data ONTAP operando no modo 7, você deve especificar um valor válido para a opção -copy-id. No entanto, se você estiver usando o Clustered Data ONTAP, a opção -copy-id não é necessária.
+
+Ao restaurar dados do storage secundário, o SnapManager primeiro tenta restaurar dados diretamente do sistema de storage secundário para o sistema de storage primário (sem envolver o host). Se o SnapManager não puder executar esse tipo de restauração (por exemplo, se os arquivos não fizerem parte do sistema de arquivos), o SnapManager voltará para uma restauração de cópia de arquivo do lado do host. O SnapManager tem dois métodos de executar uma restauração de cópia de arquivo no lado do host a partir do storage secundário. O método que o SnapManager seleciona é configurado no arquivo smo.config.
+
+* Se restore.secondaryAccessPolicy for direto, o SnapManager clones os dados no storage secundário, monta os dados clonados do sistema de storage secundário para o host e copia os dados do clone para o ambiente ativo.
++
+Esta é a política de acesso secundário padrão.
+
+* Se restore.secondaryAccessPolicy for indireto, o SnapManager primeiro copia os dados para um volume temporário no storage primário, monta os dados do volume temporário no host e copia os dados do volume temporário para o ambiente ativo.
++
+Essa política deve ser usada somente se o host não tiver acesso direto ao sistema de storage secundário. As restaurações usando o método indireto levarão o dobro do tempo que o método direto, porque duas cópias dos dados são criadas.
+
++
+.. Execute uma das seguintes ações:
++
+|===
+| Se você quiser... | Então... 
+
+
+ a| 
+Restaure um banco de dados completo se o backup selecionado existir no storage primário
+ a| 
+Digite o seguinte comando: smo backup restore -profileprofile_name-labellabel-complete-Recover -alllogs[-copy-idID]
+
+
+
+ a| 
+Restaure um banco de dados completo se o backup selecionado não existir no armazenamento primário
+ a| 
+Digite o seguinte comando: smo backup restore -profileprofile_name-labellabel-complete-recover -alllogs-from-secundary [-temp-volume <temp_volume>] [-copy-idd]
+
+|===
+
+
+
+
+
+
+== Exemplo
+
+O comando a seguir restaura um backup protegido do sistema de storage secundário:
+
+[listing]
+----
+smo backup restore -profile PAYDB -label daily_monday -complete
+-recover alllogs -from-secondary -copy-id 3042 -temp-volume smo_scratch_restore_volume
+Operation Id [8abc011215d385920115d38599470001] succeeded.
+----

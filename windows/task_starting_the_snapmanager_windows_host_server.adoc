@@ -1,0 +1,25 @@
+---
+permalink: windows/task_starting_the_snapmanager_windows_host_server.html 
+sidebar: sidebar 
+keywords: start, snapmanager, server, windows, service, host 
+summary: Você pode iniciar o servidor SnapManager usando os serviços do Windows. 
+---
+= Iniciando o servidor host SnapManager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode iniciar o servidor SnapManager usando os serviços do Windows.
+
+. Clique em *Iniciar* > *Painel de controlo* > *Ferramentas administrativas* > *Serviços*.
+. Na janela Serviços, selecione NetAppSnapManager 3,3 para Oracle.
+. Você pode iniciar o servidor de uma de três maneiras:
++
+** No painel esquerdo, clique em *Iniciar*.
+** Clique com o botão direito do Mouse NetAppSnapManager 3,3 para Oracle e selecione *Start* no menu suspenso.
+** Clique duas vezes em NetAppSnapManager 3,3 para Oracle e, na janela Propriedades, clique em *Iniciar*.
+
+
+

@@ -1,0 +1,28 @@
+---
+permalink: unix-administration/reference_running_multiple_parallel_operations_fail_in_snapmanager.html 
+sidebar: sidebar 
+keywords: multiple, parallel, operation, seperate, database, storage, system, lun, igroup, command, delete, create 
+summary: Quando você executa várias operações paralelas em bancos de dados separados que residem no mesmo sistema de armazenamento, o grupo de LUNs associados a ambos os bancos de dados pode ser excluído devido a uma das operações. Mais tarde, se a outra operação tentar usar o grupo excluído, o SnapManager exibirá uma mensagem de erro. 
+---
+= Falha ao executar várias operações paralelas no SnapManager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Quando você executa várias operações paralelas em bancos de dados separados que residem no mesmo sistema de armazenamento, o grupo de LUNs associados a ambos os bancos de dados pode ser excluído devido a uma das operações. Mais tarde, se a outra operação tentar usar o grupo excluído, o SnapManager exibirá uma mensagem de erro.
+
+Por exemplo, se você estiver executando as operações de exclusão e criação de backup em bancos de dados diferentes quase ao mesmo tempo, a operação de criação de backup falhará. As etapas sequenciais a seguir mostram o que acontece quando você executa operações de exclusão de backup e criação de backup em diferentes bancos de dados quase ao mesmo tempo.
+
+. Execute o comando backup delete.
+. Execute o comando backup create.
+. O comando backup create identifica o grupo já existente e usa o mesmo grupo para mapear o LUN.
+. O comando backup delete exclui o LUN de backup, que foi mapeado para o mesmo grupo.
+. O comando backup delete exclui o grupo porque não há LUNs associados ao grupo.
+. O comando backup create cria o backup e tenta mapear para o grupo que não existe e, portanto, a operação falha.
+
+
+*O que fazer*
+
+Você deve criar o iggroup para cada sistema de armazenamento usado pelo banco de dados e usar o seguinte comando para atualizar o SDU com as informações do iggroup: SnapDrive igroup add

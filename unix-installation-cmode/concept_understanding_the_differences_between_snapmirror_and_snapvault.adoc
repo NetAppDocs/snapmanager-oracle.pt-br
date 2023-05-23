@@ -1,0 +1,22 @@
+---
+permalink: unix-installation-cmode/concept_understanding_the_differences_between_snapmirror_and_snapvault.html 
+sidebar: sidebar 
+keywords: snapmirror, disaster, recovery, technology, design, failover, primary, storage, secondary, geographically, disk-to-disk, snapshot, copy, replication, governance-related, purpose, compliance, standard 
+summary: O SnapMirror é uma tecnologia de recuperação de desastres projetada para failover de armazenamento primário para armazenamento secundário em um local remoto geograficamente. O SnapVault é uma tecnologia de arquivamento projetada para replicação de cópias Snapshot de disco para disco para conformidade com padrões e outros fins relacionados à governança. 
+---
+= Compreender as diferenças entre SnapMirror e SnapVault
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O SnapMirror é uma tecnologia de recuperação de desastres projetada para failover de armazenamento primário para armazenamento secundário em um local remoto geograficamente. O SnapVault é uma tecnologia de arquivamento projetada para replicação de cópias Snapshot de disco para disco para conformidade com padrões e outros fins relacionados à governança.
+
+Esses objetivos são responsáveis pelo equilíbrio diferente que cada tecnologia atinge entre os objetivos da moeda de backup e retenção de backup:
+
+* O SnapMirror armazena _somente_ as cópias Snapshot que residem no storage primário, porque, em caso de desastre, você precisa fazer failover para a versão mais recente dos dados primários que já conhece. Por exemplo, sua organização pode espelhar cópias por hora de dados de produção em um período de dez dias. Como o caso de uso de failover implica, o equipamento no sistema secundário precisa ser equivalente ou quase equivalente ao equipamento no sistema primário para servir dados de forma eficiente a partir do armazenamento espelhado.
+* O SnapVault, em contraste, armazena cópias Snapshot _estejam ou não_ no momento no storage primário porque, no caso de uma auditoria, o acesso aos dados históricos provavelmente será tão importante quanto o acesso aos dados atuais. Talvez você queira manter cópias Snapshot mensais de seus dados em um período de 20 anos (para cumprir com as regulamentações contábeis governamentais dos seus negócios, por exemplo). Como não há necessidade de servir dados de armazenamento secundário, você pode usar discos mais lentos e menos caros no sistema de cofre.
+
+
+É claro que os diferentes pesos que o SnapMirror e o SnapVault oferecem à moeda de backup e a retenção de backup derivam do limite de cópia de 255 snapshot para cada volume. Onde o SnapMirror retém as cópias mais recentes, o SnapVault retém as cópias tiradas durante o período mais longo de tempo.

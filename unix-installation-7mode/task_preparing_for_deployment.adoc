@@ -1,0 +1,20 @@
+---
+permalink: unix-installation-7mode/task_preparing_for_deployment.html 
+sidebar: sidebar 
+keywords: before, deploy, snapmanager, storage, system, unix, host, minimum, resource, requirements, preparing, deployment 
+summary: Antes de implantar o SnapManager, você deve garantir que seu sistema de storage e hosts UNIX atendam aos requisitos mínimos de recursos. 
+---
+= Preparando-se para a implantação
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de implantar o SnapManager, você deve garantir que seu sistema de storage e hosts UNIX atendam aos requisitos mínimos de recursos.
+
+. Verifique se você tem as licenças necessárias.
+. Verifique as configurações suportadas.
+. Verifique os tipos de armazenamento suportados.
+. Verifique se seus hosts UNIX atendem aos requisitos do SnapManager.
+

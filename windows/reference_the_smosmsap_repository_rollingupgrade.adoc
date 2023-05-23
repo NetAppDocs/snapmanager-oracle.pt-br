@@ -1,0 +1,93 @@
+---
+permalink: windows/reference_the_smosmsap_repository_rollingupgrade.html 
+sidebar: sidebar 
+keywords: command, perform, roll, upgrade, single, multiple, host, associate, target, database, lower, version, smo 
+summary: Este comando executa a atualização contínua em um único host ou vários hosts e seus bancos de dados de destino associados de uma versão inferior do SnapManager para uma versão superior. O host atualizado é gerenciado apenas com a versão superior do SnapManager. 
+---
+= O comando de rollingupgrade do repositório smo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Este comando executa a atualização contínua em um único host ou vários hosts e seus bancos de dados de destino associados de uma versão inferior do SnapManager para uma versão superior. O host atualizado é gerenciado apenas com a versão superior do SnapManager.
+
+
+
+== Sintaxe
+
+[listing]
+----
+
+        smo repository rollingupgrade
+-repository
+-dbname repo_service_name
+-host repo_host
+-login -username repo_username
+-port repo_port
+-upgradehost host_with_target_database
+[-force] [-noprompt]
+\[-quiet \| -verbose\]
+----
+
+
+== Parâmetros
+
+* *-repositório*
++
+As opções que seguem -repositório especificam os detalhes do banco de dados para o repositório.
+
+* *-dbname repo_service_name*
++
+Especifica o nome do banco de dados que armazena o repositório. Use o nome global ou o SID.
+
+* *-host repo_host*
++
+Especifica o nome ou endereço IP do computador host no qual o banco de dados do repositório é executado.
+
+* *-login*
++
+Inicia os detalhes de login do repositório.
+
+* *-username repo_username*
++
+Especifica o nome de usuário necessário para acessar o banco de dados que armazena o repositório.
+
+* *-upgradehost host_with_target_database*
++
+Especifica o nome do host que será atualizado de uma versão inferior do SnapManager para uma versão superior.
+
+* *-port repo_port*
++
+Especifica o número da porta TCP usado para acessar o banco de dados que armazena o repositório.
+
+* *-força*
++
+Tenta forçar a atualização do repositório. O SnapManager solicita que você faça um backup do repositório atual antes de atualizar.
+
+* *-noprompt*
++
+Não exibe o prompt antes de atualizar o banco de dados do repositório. Usar a opção -noprompt garante que o prompt não apareça, facilitando a atualização de repositórios usando um script.
+
+* *-silencioso*
++
+Exibe apenas mensagens de erro no console. O padrão é exibir mensagens de erro e aviso.
+
+* *-verbose*
++
+Exibe mensagens de erro, aviso e informativas no console.
+
+
+
+
+
+== Exemplo de comando
+
+O exemplo a seguir atualiza o repositório no banco de dados SALESDB.
+
+[listing]
+----
+smo repository rollingupgrade -repository -dbname SALESDB
+-host server1 -login -username admin -port 1521 -upgradehost hostA
+----

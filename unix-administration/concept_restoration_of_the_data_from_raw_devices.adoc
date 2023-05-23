@@ -1,0 +1,20 @@
+---
+permalink: unix-administration/concept_restoration_of_the_data_from_raw_devices.html 
+sidebar: sidebar 
+keywords: restore, alternate, location, connect, necessary, raw, device, local, host 
+summary: Antes de restaurar a partir de um local alternativo, você precisa se conetar aos dispositivos brutos necessários que existem no host local. 
+---
+= Restauração dos dados de dispositivos brutos
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de restaurar a partir de um local alternativo, você precisa se conetar aos dispositivos brutos necessários que existem no host local.
+
+Você pode invocar a restauração de uma operação de local alternativo para copiar os blocos de dados de dispositivos brutos alternativos para dispositivos brutos ativos. Para executar essa operação, você precisa especificar o dispositivo bruto alternativo a partir do qual restaurar o dispositivo bruto original criando uma especificação de restauração.
+
+*Informações relacionadas*
+
+xref:task_creating_restore_specifications.adoc[Criando especificações de restauração]

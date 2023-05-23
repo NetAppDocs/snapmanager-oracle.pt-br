@@ -1,0 +1,60 @@
+---
+permalink: unix-administration/task_configuring_e_mail_notification_for_a_new_profile.html 
+sidebar: sidebar 
+keywords: creating, new, profile, configure, receive, email, notification, completeion, database, operation, comma-seperated, list, multiple, address 
+summary: Ao criar um novo perfil, você pode configurar para receber uma notificação por e-mail após a conclusão da operação do banco de dados. 
+---
+= Configurando a notificação por e-mail para um novo perfil
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ao criar um novo perfil, você pode configurar para receber uma notificação por e-mail após a conclusão da operação do banco de dados.
+
+* Você deve configurar o endereço de e-mail a partir do qual os alertas são enviados.
+* Você deve usar uma lista separada por vírgulas para vários endereços de e-mail.
++
+Você deve garantir que não há espaço entre a vírgula e o próximo endereço de e-mail.
+
++
+.. Digite o seguinte comando: smo profile create -profileprofile [-profile-passwordprofile_password] -repositório-dbnamepo_Service_name-hostrepo_host-portrepo_port address1 address2 address1 address2
++
+Outras opções para este comando são as seguintes:
+
++
+[-force] (força)
+
++
+
+NOTE: O SnapManager suporta até 1000 carateres para endereços de e-mail.
+
++
+Quando você cria um backup de arquivos de dados e arquivos de log de arquivamento juntos usando o perfil (para criar backups de log de arquivamento separados) e a criação de backup de arquivo de dados falha, a notificação de e-mail é enviada com o backup de dados como o nome da operação em vez de backup de dados e backup de logs de arquivamento. Quando a operação de cópia de segurança do ficheiro de registo de dados e do ficheiro de registo de arquivo for bem-sucedida, verá a saída da seguinte forma:
+
++
+[listing]
+----
+
+Profile Name    : PROF_31
+Operation Name 	: Data Backup and Archive Logs Backup
+Database SID   	: TENDB1
+Database Host 	 : repo1.rtp.org.com
+Start Date 	    : Fri Sep 23 13:37:21 EDT 2011
+End Date 	      : Fri Sep 23 13:45:24 EDT 2011
+Status 	        : SUCCESS
+Error messages 	:
+----
+
+
+
+
+O exemplo a seguir exibe a notificação de e-mail configurada ao criar um novo perfil:
+
+[listing]
+----
+
+smo profile create -profile sales1 -profile-password sales1 -repository -dbname repo2 -host 10.72.197.133 -port 1521 -login -username oba5 -database -dbname DB1 -host 10.72.197.142 -sid DB1 -osaccount oracle
+-osgroup dba -notification -success -email admin1@org.com -subject {profile}_{operation-name}_{db-sid}_{db-host}_{start-date}_{end-date}_{status}
+----

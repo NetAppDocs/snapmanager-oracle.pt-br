@@ -1,0 +1,40 @@
+---
+permalink: windows/reference_the_smosmsap_schedule_resume_command.html 
+sidebar: sidebar 
+keywords: command, resume, suspend, backup, schedule, smo 
+summary: Este comando retoma o agendamento de backup suspenso. 
+---
+= O comando smo schedule resume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Este comando retoma o agendamento de backup suspenso.
+
+
+
+== Sintaxe
+
+[listing]
+----
+
+        smo schedule resume
+-profile profile_name
+-schedule-name schedule_name
+\[-quiet \| -verbose\]
+----
+
+
+== Parâmetros
+
+* *-profile profile_name*
++
+Especifica o nome do perfil relacionado ao banco de dados que você deseja retomar o agendamento de backup suspenso. O perfil contém o identificador da base de dados e outras informações da base de dados.
+
+* *-schedule-nome schedule_name*
++
+Especifica o nome da programação fornecido durante a criação de uma agenda de backup.
+
+

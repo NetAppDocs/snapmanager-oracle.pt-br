@@ -1,0 +1,112 @@
+---
+permalink: unix-administration/reference_the_smosmsapbackup_show_command.html 
+sidebar: sidebar 
+keywords: backup, show, command, display, detail, information, backup, protection, status, retention, smo 
+summary: Você pode usar o comando backup show para exibir informações detalhadas sobre um backup, incluindo seu status de proteção, classe de retenção de backup e backups em storage primário e secundário. 
+---
+= O comando smo backup show
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode usar o comando backup show para exibir informações detalhadas sobre um backup, incluindo seu status de proteção, classe de retenção de backup e backups em storage primário e secundário.
+
+
+
+== Sintaxe
+
+[listing]
+----
+
+        smo backup show
+-profile profile_name
+[-label label \[-data \| -archivelogs\] \| \[-id id\]
+\[-quiet \| -verbose\]
+----
+
+
+== Parâmetros
+
+* *-profile profile_name*
++
+Especifica o perfil para o qual mostrar backups. O perfil contém o identificador da base de dados e outras informações da base de dados.
+
+* * etiqueta de etiqueta*
++
+Especifica o rótulo do backup.
+
+* *-data*
++
+Especifica os arquivos de dados.
+
+* *-archivelogs*
++
+Especifica os arquivos de log de arquivamento.
+
+* *-id id*
++
+Especifica o ID de backup.
+
+* *-silencioso*
++
+Exibe apenas mensagens de erro no console. O padrão é exibir mensagens de erro e aviso.
+
+* *-verbose*
++
+Exibe mensagens de erro, aviso e informativas no console, bem como qualquer clone e informação de verificação.
+
+
+
+
+
+== Exemplo
+
+O exemplo a seguir mostra informações detalhadas sobre o backup:
+
+[listing]
+----
+smo backup show -profile SALES1 -label BTNFS -verbose
+Backup id: 8abc013111a450480111a45066210001
+Backup status: SUCCESS
+Primary storage resources: EXISTS
+Protection sate: PROTECTED
+Retention class: DAILY
+Backup scope: FULL
+Backup mode: OFFLINE
+Mount status: NOT MOUNTED
+Backup label: BTNFS
+Backup comment:
+RMAN Tag: SMO_BTNFS_1175283108815
+Backup start time: 2007-03-30 15:26:30
+Backup end time: 2007-03-30 15:34:13
+Verification status: OK
+Backup Retention Policy: NORMAL
+Backup database: hsdb1
+Checkpoint: 2700620
+Tablespace: SYSAUX
+Datafile: /mnt/ssys1/data/hsdb/sysaux01.dbf [ONLINE]
+...
+Control Files:
+File: /mnt/ssys1/data/control03.ctl
+...
+Archive Logs:
+File: /mnt/ssys1/data/archive_logs/2_131_626174106.dbf
+...
+Host: Host1
+Filesystem: /mnt/ssys1/data
+File: /mnt/ssys1/data/hsdb/SMOBakCtl_1175283005231_0
+...
+Volume: hs_data
+Snapshot: SMO_HSDBR_hsdb1_F_C_1_
+8abc013111a450480111a45066210001_0
+File: /mnt/ssys1/data/hsdb/SMOBakCtl_1175283005231_0
+...
+Protected copies on Secondary Storage:
+  14448939 - manow
+  88309228 - graffe
+----
+*Informações relacionadas*
+
+xref:task_viewing_backup_details.adoc[Visualização dos detalhes da cópia de segurança]

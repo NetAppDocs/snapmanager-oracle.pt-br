@@ -1,0 +1,220 @@
+---
+permalink: windows/concept_variables_available_in_the_task_scripts_for_backup_operation.html 
+sidebar: sidebar 
+keywords: provide, context, information, form, environment, variable, relate, backup, perform 
+summary: O SnapManager fornece informações de contexto na forma de variáveis de ambiente relacionadas à operação de backup que está sendo executada. Por exemplo, seu script pode recuperar o nome do host original, o nome da política de retenção e o rótulo do backup. 
+---
+= Variáveis disponíveis nos scripts de tarefa para a operação de backup
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O SnapManager fornece informações de contexto na forma de variáveis de ambiente relacionadas à operação de backup que está sendo executada. Por exemplo, seu script pode recuperar o nome do host original, o nome da política de retenção e o rótulo do backup.
+
+A tabela a seguir lista as variáveis de ambiente que você pode usar em seus scripts:
+
+|===
+
+
+| Variáveis | Descrição | Formato 
+
+
+ a| 
+SM_OPERATION_ID
+ a| 
+Especifica o ID da operação atual
+ a| 
+cadeia de carateres
+
+
+
+ a| 
+SM_PROFILE_NAME
+ a| 
+Especifica o nome do perfil usado
+ a| 
+cadeia de carateres
+
+
+
+ a| 
+SM_SID
+ a| 
+Especifica o identificador do sistema do banco de dados
+ a| 
+cadeia de carateres
+
+
+
+ a| 
+SM_HOST
+ a| 
+Especifica o nome do host do banco de dados
+ a| 
+cadeia de carateres
+
+
+
+ a| 
+SM_OS_USER
+ a| 
+Especifica o proprietário do sistema operacional (SO) do banco de dados
+ a| 
+cadeia de carateres
+
+
+
+ a| 
+SM_OS_GROUP
+ a| 
+Especifica o grupo de SO do banco de dados
+ a| 
+cadeia de carateres
+
+
+
+ a| 
+SM_BACKUP_TYPE
+ a| 
+Especifica o tipo de backup (on-line, off-line ou automático)
+ a| 
+cadeia de carateres
+
+
+
+ a| 
+SM_BACKUP_LABEL
+ a| 
+Especifica o rótulo do backup
+ a| 
+cadeia de carateres
+
+
+
+ a| 
+SM_BACKUP_ID
+ a| 
+Especifica a ID do backup
+ a| 
+cadeia de carateres
+
+
+
+ a| 
+SM_BACKUP_RETENÇÃO
+ a| 
+Especifica o período de retenção
+ a| 
+cadeia de carateres
+
+
+
+ a| 
+SM_BACKUP_PROFILE
+ a| 
+Especifica o perfil usado para esse backup
+ a| 
+cadeia de carateres
+
+
+
+ a| 
+SM_ALLOW_DATABASE_SHUTDOWN
+ a| 
+Especifica se você deseja iniciar ou encerrar o banco de dados se necessário, você pode usar a opção -force da interface de linha de comando.
+ a| 
+booleano
+
+
+
+ a| 
+SM_BACKUP_SCOPE
+ a| 
+Especifica o escopo do backup (total ou parcial)
+ a| 
+cadeia de carateres
+
+
+
+ a| 
+SM_TARGET_ARQUIVADOR_NAME
+ a| 
+Especifica o nome do sistema de armazenamento de destino *Nota:* se mais de um sistema de armazenamento for usado, os nomes do sistema de armazenamento devem ser separados por vírgulas.
+ a| 
+cadeia de carateres
+
+
+
+ a| 
+SM_TARGET_VOLUME_NAME
+ a| 
+Especifica o nome do volume de destino *Nota:* o nome do volume de destino deve ser prefixado com o nome do dispositivo de armazenamento, por exemplo, SM_TARGET_ARQUIVADOR_name/SM_TARGET_VOLUME_NAME.
+ a| 
+cadeia de carateres
+
+
+
+ a| 
+SM_HOST_FILE_SYSTEM
+ a| 
+Especifica o sistema de arquivos host
+ a| 
+cadeia de carateres
+
+
+
+ a| 
+SM_SNAPSHOT_NAMES
+ a| 
+Especifica a lista de instantâneos *Observação:* o nome das cópias Snapshot deve ser prefixado com o nome do sistema de armazenamento e o nome do volume. Os nomes das cópias Snapshot são separados por vírgulas.
+ a| 
+array de cadeia de carateres
+
+
+
+ a| 
+SM_ARCHIVE_LOGS_DIRECTORY
+ a| 
+Especifica o diretório de logs de arquivo *Nota:* se os logs de arquivo estiverem localizados em mais de um diretório, os nomes desses diretórios serão separados por vírgulas.
+ a| 
+array de cadeia de carateres
+
+
+
+ a| 
+SM_REDO_LOGS_DIRECTORY
+ a| 
+Especifica o diretório refazer logs *Observação:* se os logs de refazer estiverem localizados em mais de um diretório, os nomes desses diretórios serão separados por vírgulas.
+ a| 
+array de cadeia de carateres
+
+
+
+ a| 
+SM_CONTROL_FILES_DIRECTORY
+ a| 
+Especifica o diretório de arquivos de controle *Nota:* se os arquivos de controle estiverem localizados em mais de um diretório, os nomes desses diretórios serão separados por vírgulas.
+ a| 
+array de cadeia de carateres
+
+
+
+ a| 
+SM_DATA_FILES_DIRECTORY
+ a| 
+Especifica o diretório de arquivos de dados *Nota:* se os arquivos de dados estiverem localizados em mais de um diretório, os nomes desses diretórios serão separados por vírgulas.
+ a| 
+array de cadeia de carateres
+
+
+
+ a| 
+user_defined (definido pelo utilizador)
+ a| 
+Especifica parâmetros adicionais definidos pelo usuário. Os parâmetros definidos pelo usuário não estão disponíveis para plug-ins usados como políticas.
+ a| 
+definido pelo utilizador
+
+|===

@@ -1,0 +1,90 @@
+---
+permalink: unix-administration/reference_troubleshooting_snapdrive_issues.html 
+sidebar: sidebar 
+keywords: common, issue, snapmanager, snapdrive, product, troubleshoot 
+summary: Há alguns problemas comuns que você pode encontrar ao usar o SnapManager com produtos SnapDrive. 
+---
+= Solução de problemas do SnapDrive
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Há alguns problemas comuns que você pode encontrar ao usar o SnapManager com produtos SnapDrive.
+
+Primeiro, você deve determinar se o problema está relacionado ao SnapManager para Oracle ou SnapDrive. Se o problema for um erro SnapDrive, o SnapManager para Oracle emitirá uma mensagem de erro semelhante a:
+
+[listing]
+----
+SMO-12111: Error executing snapdrive command "<snapdrive command>": <snapdrive error>
+----
+O seguinte é um exemplo de uma mensagem de erro SnapDrive em que SMO-12111 é o número de erro SnapManager. O esquema de numeração 0001-770 representa erros SnapDrive para UNIX.
+
+[listing]
+----
+SMO-12111: Error executing snapdrive command
+"/usr/sbin/snapdrive snap restore -file
+/mnt/pathname/ar_anzio_name_10gR2_arrac1/data/undotbs02.dbf
+-snapname pathname.company.com:
+/vol/ar_anzio_name_10gR2_arrac1:
+TEST_ARRAC1_YORKTOW_arrac12_F_C_0_8abc01b20f9ec03d010f9ec06bee0001_0": 0001-770
+Admin error: Inconsistent number of files returned when listing contents of
+/vol/ar_anzio_name_10gR2_arrac1/.snapshot/
+TEST_ARRAC1_YORKTOW_arrac12_F_C_0_8abc01b20f9ec03d010f9ec06bee0001_0/data
+on filer pathname.
+----
+A seguir estão as mensagens de erro mais comuns do SnapDrive para UNIX relacionadas à descoberta de LUN, problemas de configuração e espaço. Se você receber algum desses erros, consulte o capítulo solução de problemas do _Guia de Instalação e Administração do SnapDrive_.
+
+|===
+| Sintoma | Explicação 
+
+
+ a| 
+0001-136 erro de administrador: Não é possível iniciar sessão no arquivador: <filer> defina o nome de utilizador e/ou a palavra-passe para o <filer>
+ a| 
+Configuração inicial do SnapDrive
+
+
+
+ a| 
+0001-382 erro de administrador: Falha na redigitalização multipathing
+ a| 
+Erro de descoberta de LUN
+
+
+
+ a| 
+0001-462 erro de administrador: Falha ao desconfigurar multipathing para <LUN>: spd5: Não é possível parar o dispositivo. Dispositivo ocupado.
+ a| 
+Erro de descoberta de LUN
+
+
+
+ a| 
+0001-476 erro de administrador: Não foi possível descobrir o dispositivo associado a ... 0001-710 erro de administrador: A atualização do SO de LUN falhou ...
+ a| 
+Erro de descoberta de LUN
+
+
+
+ a| 
+0001-680 erro de administração: O sistema operacional do host requer uma atualização para dados internos para permitir a criação ou conexão de LUN. Utilize 'SnapDrive config prepare luns' ou atualize estas informações manualmente...
+ a| 
+Erro de descoberta de LUN
+
+
+
+ a| 
+0001-817 erro de administrador: Falha ao criar clone de volume ... : FlexClone não licenciado
+ a| 
+Configuração inicial do SnapDrive
+
+
+
+ a| 
+0001-878 erro de administrador: Assistente HBA não encontrado. Comandos envolvendo LUNs devem falhar.
+ a| 
+Erro de descoberta de LUN
+
+|===

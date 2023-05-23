@@ -1,0 +1,10 @@
+---
+permalink: index.html 
+sidebar: sidebar 
+---
+= SnapManager 3.4.2 para Oracle
+:allow-uri-read: 
+
+
+[role="lead"]
+Bem-vindo à Biblioteca de informações do SnapManager para Oracle. Aqui você encontrará informações sobre o SnapManager 3.4.2 para Oracle, incluindo como configurar, gerenciar e configurar o software para o Clustered Data ONTAP e para o Data ONTAP operando no modo 7D.

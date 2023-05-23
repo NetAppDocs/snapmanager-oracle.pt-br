@@ -1,0 +1,19 @@
+---
+permalink: unix-administration/concept_why_you_should_prune_archive_log_files.html 
+sidebar: sidebar 
+keywords: snapmanager, oracle, delete, archive, log, file, active, system, back, up, pruning 
+summary: O SnapManager para Oracle permite que você exclua arquivos de log de arquivamento do sistema de arquivos ativo que já estão em backup. 
+---
+= Por que você deve podar arquivos de log de arquivo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O SnapManager para Oracle permite que você exclua arquivos de log de arquivamento do sistema de arquivos ativo que já estão em backup.
+
+A eliminação permite que o SnapManager crie backups de arquivos de log de arquivamento distintos. A eliminação, juntamente com a política de retenção de backup, libera espaço de log de arquivamento quando os backups são removidos.
+
+
+NOTE: Você não pode podar os arquivos de log de arquivamento quando a Área de recuperação Flash (FRA) está ativada para arquivos de log de arquivamento. Se você especificar o local do log de arquivamento na Área de recuperação do Flash, você deve garantir que você também especifique o local do log de arquivamento no parâmetro archive_log_dest.

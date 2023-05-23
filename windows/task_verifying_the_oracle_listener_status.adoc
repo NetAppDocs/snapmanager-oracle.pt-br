@@ -1,0 +1,22 @@
+---
+permalink: windows/task_verifying_the_oracle_listener_status.html 
+sidebar: sidebar 
+keywords: verify, oracle, listener, status, lsnrctl, command 
+summary: Você pode verificar o status do ouvinte Oracle usando o comando lsnrctl status. 
+---
+= Verificando o status do ouvinte Oracle
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode verificar o status do ouvinte Oracle usando o comando lsnrctl status.
+
+* Você deve se conetar ao banco de dados.
+
+
+Uma instalação Oracle padrão define a porta listener no banco de dados como 1521.
+
+. No prompt de comando, digite o comando:lsnrctl status
+

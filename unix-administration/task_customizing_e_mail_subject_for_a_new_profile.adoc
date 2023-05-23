@@ -1,0 +1,96 @@
+---
+permalink: unix-administration/task_customizing_e_mail_subject_for_a_new_profile.html 
+sidebar: sidebar 
+keywords: customize, email, subject, new, profile, create 
+summary: Você pode personalizar o assunto do e-mail para o novo perfil ao criá-lo. 
+---
+= Personalizar o assunto do e-mail para um novo perfil
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode personalizar o assunto do e-mail para o novo perfil ao criá-lo.
+
+Você pode personalizar o assunto do e-mail usando o padrão dB-sid__host_dB-date____start-date_end-date_____status ou digite seu próprio texto.
+
+|===
+| Nome da variável | Descrição | Exemplo de valor 
+
+
+ a| 
+perfil
+ a| 
+Nome do perfil usado para a operação do banco de dados
+ a| 
+PROF1
+
+
+
+ a| 
+nome da operação
+ a| 
+Nome da operação do banco de dados
+ a| 
+Cópia de segurança, cópia de segurança de dados, cópia de segurança de dados e registos de arquivo
+
+
+
+ a| 
+db-sid
+ a| 
+SID do banco de dados
+ a| 
+DB1
+
+
+
+ a| 
+db-host
+ a| 
+Nome do servidor anfitrião
+ a| 
+HostA
+
+
+
+ a| 
+data de início
+ a| 
+Hora de início da operação do banco de dados no formato mmdd:hh:ss aaaa
+ a| 
+Abril 27 21:00:45 PST 2012
+
+
+
+ a| 
+data de fim
+ a| 
+Hora de fim da operação do banco de dados no formato mmdd:hh:ss aaaa
+ a| 
+Abril 27 21:10:45 PST 2012
+
+
+
+ a| 
+estado
+ a| 
+Estado da operação da base de dados
+ a| 
+Sucesso
+
+|===
+Se você não fornecer nenhum valor para as variáveis, o SnapManager exibirá a seguinte mensagem de erro: Valor(s) ausente(s) -Assunto.
+
+. Digite o seguinte comando: smo profile create -profileprofile [-profile-passwordprofile_password] -repositório-dbnamepo_Service_name-hostrepo_host-portrepo_port_login-usernamepo_database-dbnnamedb_nomedb [-durman] [-nomedb] [-nomedb] [-nomedb_nomedb address1 address2 address1 address2]
+
+
+A seguir está um exemplo mostrando o padrão de assunto do email:
+
+[listing]
+----
+
+smo profile create -profile sales1 -profile-password admin1 -repository -dbname repo2 -host 10.72.197.133 -port 1521 -login -username admin2 -database -dbname DB1 -host 10.72.197.142 -sid DB1
+-osaccount oracle -osgroup dba -profile-notification -success -email admin@org.com -subject {profile}_{operation-name}_{db-sid}_{db-host}_{start-date}_{end-date}_{status}
+----

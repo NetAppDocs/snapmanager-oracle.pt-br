@@ -1,0 +1,31 @@
+---
+permalink: unix-administration/concept_details_of_the_target_database.html 
+sidebar: sidebar 
+keywords: integrated, database, protection, payroll, techco, dba, 3000-person, atlanta 
+summary: Este exemplo de proteção de banco de dados integrada descreve a proteção de um banco de dados de folha de pagamento. Os seguintes dados são usados no exemplo. 
+---
+= Detalhes do banco de dados de destino
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Este exemplo de proteção de banco de dados integrada descreve a proteção de um banco de dados de folha de pagamento. Os seguintes dados são usados no exemplo.
+
+O administrador de banco de dados (DBA) da TechCo, uma empresa de 3000 pessoas com sede em Atlanta, deve criar um backup consistente do banco de dados de folha de pagamento de produção, PAYDB. A estratégia de proteção para backup em storage primário e secundário requer que o DBA e o administrador de storage trabalhem juntos para fazer backup do banco de dados Oracle localmente no storage primário e também remotamente, para o armazenamento secundário em um local remoto.
+
+* *Informações de perfil*
++
+Ao criar um perfil no SnapManager, você precisa dos seguintes dados:
+
++
+** Nome do banco de dados: PAYDB
+** Nome do anfitrião: payroll.techco.com
+** ID da base de dados: Payrolldb
+** Nome do perfil: Payroll_prod
+** Modo de conexão: Autenticação de banco de dados
+** Esquema de nomeação de snapshot: smo_hostname_dbsid_smoprofile_scope_mode_smid (que se traduz em "smo_payroll.xyz.com_payrolldb_payroll_prod_f_h_x")
+
+
+

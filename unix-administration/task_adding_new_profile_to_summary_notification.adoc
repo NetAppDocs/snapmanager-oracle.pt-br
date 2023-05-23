@@ -1,0 +1,23 @@
+---
+permalink: unix-administration/task_adding_new_profile_to_summary_notification.html 
+sidebar: sidebar 
+keywords: configure, summary, email, notification, repository, database, add, new, profile 
+summary: Depois de configurar uma notificação de e-mail de resumo para o banco de dados do repositório, você pode adicionar um novo perfil à notificação de resumo usando o comando de notificação de resumo. 
+---
+= Adicionar um novo perfil às notificações de resumo por e-mail
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Depois de configurar uma notificação de e-mail de resumo para o banco de dados do repositório, você pode adicionar um novo perfil à notificação de resumo usando o comando de notificação de resumo.
+
+. Digite o seguinte comando: smo profileprofile_name [-profile-passwordprofile_password] -repositório-dbnamepo_Service_name-hostrepo_host-portrepo_port
++
+Outras opções para este comando são as seguintes:
+
++
+[-force] (força)
+
+

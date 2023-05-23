@@ -1,0 +1,21 @@
+---
+permalink: windows/task_retaining_backups_forever.html 
+sidebar: sidebar 
+keywords: specify, backup, ineligible, deletion, retention, policy, indefinitely, retaining, forever 
+summary: Você pode especificar que um backup deve ser inelegível para exclusão pela política de retenção para manter o backup indefinidamente. 
+---
+= Mantendo backups para sempre
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode especificar que um backup deve ser inelegível para exclusão pela política de retenção para manter o backup indefinidamente.
+
+. Para especificar que um backup seja mantido em uma base ilimitada, digite este comando:smo backup update -profileprofile_name [data | -archivelogs] | -idd] -ret -Unlimited
+
+
+*Informações relacionadas*
+
+xref:reference_the_smosmsapbackup_update_command.adoc[O comando smo backup update]

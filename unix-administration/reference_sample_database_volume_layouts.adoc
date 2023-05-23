@@ -1,0 +1,379 @@
+---
+permalink: unix-administration/reference_sample_database_volume_layouts.html 
+sidebar: sidebar 
+keywords: refer, sample, database, volume, layout, configuring, database 
+summary: Você pode consultar exemplos de layouts de volume de banco de dados para obter ajuda na configuração de seu banco de dados. 
+---
+= Exemplos de layouts de volume de banco de dados
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode consultar exemplos de layouts de volume de banco de dados para obter ajuda na configuração de seu banco de dados.
+
+
+
+== Bancos de dados de instância única
+
+|===
+| Tipos de ficheiros | Nomes de volume | Volume dedicado para tipos de arquivo | Cópias Snapshot automáticas 
+
+
+ a| 
+Binários Oracle
+ a| 
+nome orabin_host
+ a| 
+Sim
+ a| 
+Ligado
+
+
+
+ a| 
+Ficheiros de dados
+ a| 
+oradata_sid
+ a| 
+Sim
+ a| 
+Desligado
+
+
+
+ a| 
+Ficheiros de dados temporários
+ a| 
+oratemp_sid
+ a| 
+Sim
+ a| 
+Desligado
+
+
+
+ a| 
+Controlar ficheiros
+ a| 
+oracntrl01_sid (Multiplexed)
+
+oracntrl02_sid (Multiplexed)
+ a| 
+Sim
+ a| 
+Desligado
+
+
+
+ a| 
+Refazer registos
+ a| 
+oralog01_sid (Multiplexed)
+
+oralog02_sid (Multiplexed)
+ a| 
+Sim
+ a| 
+Desligado
+
+
+
+ a| 
+Arquivar registos
+ a| 
+oraarch_sid
+ a| 
+Sim
+ a| 
+Desligado
+
+|===
+
+
+== Bancos de dados RAC (Real Application clusters)
+
+|===
+| Tipos de ficheiros | Nomes de volume | Volume dedicado para tipos de arquivo | Cópias Snapshot automáticas 
+
+
+ a| 
+Binários Oracle
+ a| 
+nome orabin_host
+ a| 
+Sim
+ a| 
+Ligado
+
+
+
+ a| 
+Ficheiros de dados
+ a| 
+oradata_dbname
+ a| 
+Sim
+ a| 
+Desligado
+
+
+
+ a| 
+Ficheiros de dados temporários
+ a| 
+oratemp_dbname
+ a| 
+Sim
+ a| 
+Desligado
+
+
+
+ a| 
+Controlar ficheiros
+ a| 
+oracntrl01_dbname (Multiplexed)
+
+oracntrl02_dbname (Multiplexed)
+ a| 
+Sim
+ a| 
+Desligado
+
+
+
+ a| 
+Refazer registos
+ a| 
+oralog01_dbname (Multiplexed)
+
+oralog02_dbname (Multiplexed)
+ a| 
+Sim
+ a| 
+Desligado
+
+
+
+ a| 
+Arquivar registos
+ a| 
+oraarch_dbname
+ a| 
+Sim
+ a| 
+Desligado
+
+
+
+ a| 
+Arquivos de cluster
+ a| 
+oracrs_clustername
+ a| 
+Sim
+ a| 
+Ligado
+
+|===
+
+
+== Uma única instância de um banco de dados de gerenciamento automático de armazenamento (ASM)
+
+|===
+| Tipos de ficheiros | Nomes de volume | Nomes de LUN | Volume dedicado para tipos de arquivo | Cópias Snapshot automáticas 
+
+
+ a| 
+Binários Oracle
+ a| 
+nome orabin_host
+ a| 
+nome do orabin_host
+ a| 
+Sim
+ a| 
+Ligado
+
+
+
+ a| 
+Ficheiros de dados
+ a| 
+oradata_sid
+ a| 
+oradata_sidlun
+ a| 
+Sim
+ a| 
+Desligado
+
+
+
+ a| 
+Ficheiros de dados temporários
+ a| 
+oratemp_sid
+ a| 
+Ortemp_sidlun
+ a| 
+Sim
+ a| 
+Desligado
+
+
+
+ a| 
+Controlar ficheiros
+ a| 
+oracntrl01_sid (Multiplexed)
+
+oracntrl02_sid (Multiplexed)
+ a| 
+oracntrl01_sidlun (multiplexado)
+
+oracntrl02_sidlun (multiplexado)
+ a| 
+Sim
+ a| 
+Desligado
+
+
+
+ a| 
+Refazer registos
+ a| 
+oralog01_dbname (Multiplexed)
+
+oralog02_dbname (Multiplexed)
+ a| 
+oralog01_dbnamelun (Multiplexed)
+
+oralog02_dbnamelun (Multiplexed)
+ a| 
+Sim
+ a| 
+Desligado
+
+
+
+ a| 
+Arquivar registos
+ a| 
+oraarch_sid
+ a| 
+Oraarch_sidlun
+ a| 
+Sim
+ a| 
+Desligado
+
+|===
+
+
+== Bancos de dados ASM RAC
+
+|===
+| Tipos de ficheiros | Nomes de volume | Nomes de LUN | Volume dedicado para tipos de arquivo | Cópias Snapshot automáticas 
+
+
+ a| 
+Binários Oracle
+ a| 
+nome orabin_host
+ a| 
+nome do orabin_host
+ a| 
+Sim
+ a| 
+Ligado
+
+
+
+ a| 
+Ficheiros de dados
+ a| 
+oradata_sid
+ a| 
+oradata_sidlun
+ a| 
+Sim
+ a| 
+Desligado
+
+
+
+ a| 
+Ficheiros de dados temporários
+ a| 
+oratemp_sid
+ a| 
+Ortemp_sidlun
+ a| 
+Sim
+ a| 
+Desligado
+
+
+
+ a| 
+Controlar ficheiros
+ a| 
+oracntrl01_sid (Multiplexed)
+
+oracntrl02_sid (Multiplexed)
+ a| 
+oracntrl01_sidlun (multiplexado)
+
+oracntrl02_sidlun (multiplexado)
+ a| 
+Sim
+ a| 
+Desligado
+
+
+
+ a| 
+Refazer registos
+ a| 
+oralog01_dbname (Multiplexed)
+
+oralog02_dbname (Multiplexed)
+ a| 
+oralog01_dbnamelun (Multiplexed)
+
+oralog02_dbnamelun (Multiplexed)
+ a| 
+Sim
+ a| 
+Desligado
+
+
+
+ a| 
+Arquivar registos
+ a| 
+oraarch_sid
+ a| 
+Oraarch_sidlun
+ a| 
+Sim
+ a| 
+Desligado
+
+
+
+ a| 
+Arquivos de cluster
+ a| 
+oracrs_clustername
+ a| 
+oracrs_clusternamelun
+ a| 
+Sim
+ a| 
+Ligado
+
+|===

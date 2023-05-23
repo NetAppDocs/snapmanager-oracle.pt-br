@@ -1,0 +1,49 @@
+---
+permalink: unix-administration/reference_the_smosmsap_server_restart_command.html 
+sidebar: sidebar 
+keywords: command, restart, snapmanager, host, server, root, smo_server 
+summary: Este comando reinicia o servidor host SnapManager e é inserido como root. 
+---
+= O comando smo_Server restart
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Este comando reinicia o servidor host SnapManager e é inserido como root.
+
+
+
+== Sintaxe
+
+[listing]
+----
+
+        smo_server restart
+[-quiet | -verbose]
+----
+
+
+== Parâmetros
+
+* *-silencioso*
++
+Especifica que somente mensagens de erro são exibidas no console. O padrão é exibir mensagens de erro e aviso.
+
+* *-verbose*
++
+Especifica que mensagens de erro, aviso e informações são exibidas no console.
+
+
+
+
+
+== Exemplo de comando
+
+O exemplo a seguir reinicia o servidor host.
+
+[listing]
+----
+smo_server restart
+----

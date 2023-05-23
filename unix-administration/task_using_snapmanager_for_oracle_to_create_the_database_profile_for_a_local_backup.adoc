@@ -1,0 +1,73 @@
+---
+permalink: unix-administration/task_using_snapmanager_for_oracle_to_create_the_database_profile_for_a_local_backup.html 
+sidebar: sidebar 
+keywords: database, administrator, snapmanager, create, profile, backup, local, oracle 
+summary: Os administradores de banco de dados usam o SnapManager para criar um perfil de banco de dados que será usado para iniciar um backup para o storage local em um sistema de storage primário. Todos os processos de criação de perfil e backup são executados inteiramente no SnapManager; eles não envolvem o Gerenciador de proteção. 
+---
+= Usando o SnapManager para Oracle para criar o perfil do banco de dados para um backup local
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Os administradores de banco de dados usam o SnapManager para criar um perfil de banco de dados que será usado para iniciar um backup para o storage local em um sistema de storage primário. Todos os processos de criação de perfil e backup são executados inteiramente no SnapManager; eles não envolvem o Gerenciador de proteção.
+
+Um perfil contém as informações sobre o banco de dados que está sendo gerenciado, incluindo suas credenciais, configurações de backup e configurações de proteção para backups. Ao criar um perfil, você não precisa especificar os detalhes do banco de dados sempre que executar uma operação nesse banco de dados, em vez disso, basta fornecer o nome do perfil. Um perfil pode referenciar apenas um banco de dados. Esse mesmo banco de dados pode ser referenciado por mais de um perfil.
+
+. Vá para o cliente SnapManager para Oracle.
+. Na árvore repositórios do SnapManager, clique com o botão direito do Mouse no host que você deseja associar a esse perfil e selecione *criar perfil*.
+. Na página informações de configuração do perfil, insira as informações a seguir e clique em *Avançar*.
++
+** Nome do perfil: Payroll_prod
+** Senha do perfil: payroll123
+** Comentário: Banco de dados de Folha de pagamento de produção
+
+
+. Na página informações de configuração de banco de dados, insira as informações a seguir e clique em *Avançar*.
++
+** Nome do banco de dados: PAYDB
+** Banco de dados SID: Payrolldb
+** Host do banco de dados: Aceite o padrão
++
+Como você está criando um perfil a partir de um host na árvore do repositório, o SnapManager exibe o nome do host.
+
+
+
+. Na segunda página informações de configuração de banco de dados, aceite as seguintes informações de banco de dados e clique em *Next*:
++
+** Conta de host, representando a conta de usuário Oracle: oracle
+** Grupo anfitrião, representando o grupo Oracle: dba
+
+
+. Na página informações de conexão de banco de dados, selecione *usar autenticação de banco de dados* para permitir que os usuários se autentiquem usando informações de banco de dados.
++
+Para este exemplo, insira as informações a seguir e clique em *Next*.
+
++
+** Nome de usuário privilegiado SYSDBA, representando o administrador do banco de dados do sistema que tem Privileges administrativo: Sys
+** Senha (senha SYSDBA): oracle
+** Porta para conetar ao host de banco de dados: 1521
+
+
+. Na página informações de configuração do RMAN, selecione *não use RMAN* e clique em *Next*.
++
+O Oracle Recovery Manager (RMAN) é uma ferramenta Oracle que ajuda você a fazer backup e recuperar bancos de dados Oracle usando deteção em nível de bloco.
+
+. Na página informações do Nome do Snapshot, especifique uma convenção de nomenclatura para os instantâneos associados a esse perfil selecionando variáveis. A única variável que é necessária é a variável *smid*, que cria um identificador único de snapshot.
++
+Para este exemplo, faça o seguinte:
+
++
+.. Na lista Variable Token, selecione a variável * e clique em *Add*.
+.. Digite "payroll.techco.com_" como o nome do host e clique em *OK*.
+.. Clique em *left* até que o nome do host apareça logo após "smo" na caixa Formatar.
+.. Clique em *seguinte*.
+
+
++
+A convenção de nomenclatura Snapshot de smo_hostname_smoprofile_dbsid_scope_mode_smid se torna "smo_payroll.techco.com_payroll_prod2_payrolldb_f_a_x" (onde "f" indica um backup completo, o "a" indica o modo automático e o "x" representa o SMID exclusivo).
+
+. Na página Executar operação, verifique as informações e clique em *criar*.
+. Clique em *Detalhes da operação* para ver informações sobre a operação criar perfil e informações de elegibilidade de restauração baseadas em volume.
+

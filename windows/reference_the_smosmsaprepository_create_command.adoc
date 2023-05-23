@@ -1,0 +1,95 @@
+---
+permalink: windows/reference_the_smosmsaprepository_create_command.html 
+sidebar: sidebar 
+keywords: smo, repository, data, profile, block, size, smo 
+summary: Este comando cria um repositório no qual armazenar perfis de banco de dados e credenciais associadas. Este comando também verifica se o tamanho do bloco é adequado. 
+---
+= O comando smo repositório create
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+
+
+== Sintaxe
+
+Este comando cria um repositório no qual armazenar perfis de banco de dados e credenciais associadas. Este comando também verifica se o tamanho do bloco é adequado.
+
+[listing]
+----
+
+        smo repository create
+-repository
+-port repo_port
+-dbname repo_service_name
+-host repo_host
+-login -username repo_username
+[-force] [-noprompt]
+\[-quiet \| -verbose\]
+----
+
+
+== Parâmetros
+
+* *-repositório*
++
+As opções que seguem -repositório especificam os detalhes do banco de dados para o repositório
+
+* *-port repo_port*
++
+Especifica o número da porta TCP usado para acessar o banco de dados que armazena o repositório.
+
+* *-dbname repo_service_name*
++
+Especifica o nome do banco de dados que armazena o repositório. Use o nome global ou o SID.
+
+* *-host repo_host*
++
+Especifica o nome ou endereço IP do computador host no qual o banco de dados do repositório é executado.
+
+* *-login*
++
+Inicia os detalhes de login do repositório.
+
+* *-username repo_username*
++
+Especifica o nome de usuário necessário para acessar o banco de dados que armazena o repositório.
+
+* *-força*
++
+Tenta forçar a criação do repositório. O uso dessa opção resulta em SnapManager solicitando que você faça backup do repositório antes de criar o repositório.
+
+* *-noprompt*
++
+Não exibe o prompt para fazer backup do repositório antes de criá-lo se você usar a opção -force. Usar a opção -noprompt garante que o prompt não apareça, facilitando a criação de repositórios usando um script.
+
+* *-silencioso*
++
+Exibe apenas mensagens de erro no console. O padrão é exibir mensagens de erro e aviso.
+
+* *-verbose*
++
+Exibe mensagens de erro, aviso e informativas no console.
+
+
+
+
+
+== Exemplo de comando
+
+O exemplo a seguir cria um repositório no banco de dados SMOREPO no hotspur host.
+
+[listing]
+----
+smo repository create -repository -port 1521 -dbname SMOREPO -host hotspur -login -username grabal21 -verbose
+SMO-09202 [INFO ]: Creating new schema as grabal21 on jdbc:oracle:thin:@//hotspur:1521/SMOREPO.
+SMO-09205 [INFO ]: Schema generation complete.
+SMO-09209 [INFO ]: Performing repository version INSERT.
+SMO-09210 [INFO ]: Repository created with version: 30
+SMO-13037 [INFO ]: Successfully completed operation: Repository Create
+SMO-13049 [INFO ]: Elapsed Time: 0:00:08.844
+----
+*Informações relacionadas*
+
+xref:task_creating_repositories.adoc[Criando repositórios]

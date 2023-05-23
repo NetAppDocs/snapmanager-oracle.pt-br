@@ -1,0 +1,89 @@
+---
+permalink: unix-administration/reference_the_smosmsap_history_list_command.html 
+sidebar: sidebar 
+keywords: command, enable, list, history, detail, snapmanager, operation, smo 
+summary: Este comando permite visualizar uma lista de detalhes do histórico da operação SnapManager. 
+---
+= O comando smo history list
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Este comando permite visualizar uma lista de detalhes do histórico da operação SnapManager.
+
+
+
+== Sintaxe
+
+[listing]
+----
+
+        smo history list
+-profile \{-name profile_name \[profile_name1, profile_name2\] \| -all
+-repository
+-login \[-password repo_password\]
+-username repo_username
+-host repo_host
+-dbname repo_dbname
+-port repo_port}
+-operation \{-operations operation_name \[operation_name1, operation_name2\] \| -all\}
+\[-delimiter character\]
+\[-quiet \| -verbose\]
+----
+
+
+== Parâmetros
+
+* *-perfil de perfil*
++
+Especifica o nome do perfil. Esse nome pode ter até 30 carateres e deve ser único dentro do host.
+
+* *-repositório*
++
+As opções que seguem -repositório especificam os detalhes do banco de dados que armazena o perfil.
+
+* *-dbname repo_dbname*
++
+Especifica o nome do banco de dados que armazena o perfil. Use o nome global ou o SID.
+
+* *-host repo_host*
++
+Especifica o nome ou endereço IP do computador host no qual o banco de dados do repositório é executado.
+
+* *-login*
++
+Inicia os detalhes de login do repositório.
+
+* *-username repo_username*
++
+Especifica o nome de usuário necessário para acessar o banco de dados que armazena o repositório.
+
+* *-port repo_port*
++
+Especifica o número da porta TCP usado para acessar o banco de dados que armazena o repositório.
+
+* *-operation_name [operation_name1, operation_name2] | -all*
++
+Especifica a operação SnapManager para a qual você configura o histórico.
+
+* *-silencioso*
++
+Exibe apenas mensagens de erro no console. O padrão é exibir mensagens de erro e aviso.
+
+* *-verbose*
++
+Exibe mensagens de erro, aviso e informativas no console.
+
+
+
+
+
+== Exemplo de comando
+
+[listing]
+----
+
+          smo  history list -profile -name PROFILE1 -operation -operations backup -verbose
+----

@@ -1,0 +1,17 @@
+---
+permalink: windows/task_customizing_the_email_subject_for_an_existing_profile.html 
+sidebar: sidebar 
+keywords: snapmanager, enable, customize, email, subject, pattern, existing, profile, customize, update, customizing 
+summary: O SnapManager permite personalizar o padrão de assunto do e-mail para um perfil existente, atualizando esse perfil. Este padrão de assunto personalizado é aplicável apenas para o perfil atualizado. 
+---
+= Personalizar o assunto do e-mail para um perfil existente
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O SnapManager permite personalizar o padrão de assunto do e-mail para um perfil existente, atualizando esse perfil. Este padrão de assunto personalizado é aplicável apenas para o perfil atualizado.
+
+. Digite o seguinte comando: smo profile update -profileprofile [-profile-passwordprofile_password][-database-dbnnamedb_host dB_host [-siddb_sid address1 address2 address1 address2]
+

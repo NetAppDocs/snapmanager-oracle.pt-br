@@ -1,0 +1,69 @@
+---
+permalink: windows/reference_the_smosmsapclone_template_command.html 
+sidebar: sidebar 
+keywords: command, clone, specification, template, smo 
+summary: Este comando permite criar um modelo de especificação de clone. 
+---
+= O comando smo clone template
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Este comando permite criar um modelo de especificação de clone.
+
+
+
+== Sintaxe
+
+[listing]
+----
+
+        smo clone template
+-profile name
+\[-backup-id guid  \| -backup-label backup_name\]
+\[-quiet \| -verbose\]
+----
+
+
+== Parâmetros
+
+* *-nome do perfil*
++
+Especifica o banco de dados do qual você deseja criar uma especificação de clone. O perfil contém o identificador da base de dados e outras informações da base de dados.
+
+* *-backup-id guid*
++
+Cria uma especificação de clone a partir do backup com o GUID especificado. O GUID é gerado pelo SnapManager quando cria uma cópia de segurança. Use o comando smo backup list para exibir o GUID para cada backup.
+
+* *-backup-label backup_label_name*
++
+Cria uma especificação de clone a partir do backup com a etiqueta de backup especificada.
+
+* *-silencioso*
++
+Exibe apenas mensagens de erro no console. O padrão é exibir mensagens de erro e aviso.
+
+* *-verbose*
++
+Exibe mensagens de erro, aviso e informativas no console.
+
+
+
+
+
+== Exemplo de comando
+
+O exemplo a seguir cria um modelo de especificação clone do backup com o rótulo full_backup_sales_May. Quando o comando smo clone template for concluído, o modelo de especificação clone estará completo.
+
+[listing]
+----
+smo clone template -profile SALES1 -backup-label full_backup_sales_May
+Operation Id [8abc01ec0e79004b010e79006da60001] succeeded.
+----
+*Informações relacionadas*
+
+xref:task_creating_clone_specifications.adoc[Criando especificações de clone]
+
+xref:task_cloning_databases_from_backups.adoc[Clonar bancos de dados de backups]

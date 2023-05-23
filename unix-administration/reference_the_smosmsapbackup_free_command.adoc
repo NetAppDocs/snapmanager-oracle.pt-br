@@ -1,0 +1,85 @@
+---
+permalink: unix-administration/reference_the_smosmsapbackup_free_command.html 
+sidebar: sidebar 
+keywords: run, backup, free, command, snapshot, copies, metadata, smo 
+summary: Você pode executar o comando backup free para liberar as cópias Snapshot dos backups sem remover os metadados do backup do repositório. 
+---
+= O comando smo backup free
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode executar o comando backup free para liberar as cópias Snapshot dos backups sem remover os metadados do backup do repositório.
+
+
+
+== Sintaxe
+
+[listing]
+----
+
+        smo backup free
+-profile profile_name
+[-label label \[-data \| -archivelogs\] \| \[-id guid \| -all\]
+-force
+\[-dump\]
+\[-quiet \| -verbose\]
+----
+
+
+== Parâmetros
+
+* *-profile profile_name*
++
+Especifica o perfil associado ao backup que você deseja liberar. O perfil contém o identificador da base de dados e outras informações da base de dados.
+
+* *-id guid*
++
+Especifica os recursos do backup com o GUID especificado. O GUID é gerado pelo SnapManager quando cria uma cópia de segurança. Você pode usar o comando smo backup list para exibir o GUID para cada backup. Inclua a opção -verbose para exibir os IDs de backup.
+
+* * etiqueta de etiqueta*
++
+Especifica o backup com o rótulo especificado.
+
+* *-data*
++
+Especifica os arquivos de dados.
+
+* *-archivelogs*
++
+Especifica os arquivos de log de arquivamento.
+
+* *-tudo*
++
+Especifica todos os backups. Para excluir backups especificados, use a opção -id ou -label.
+
+* *-força*
++
+Força a remoção das cópias Snapshot.
+
+* *-silencioso*
++
+Exibe apenas mensagens de erro no console. O padrão é exibir mensagens de erro e aviso.
+
+* *-verbose*
++
+Exibe mensagens de erro, aviso e informativas no console.
+
+
+
+
+
+== Exemplo
+
+O exemplo a seguir libera o backup:
+
+[listing]
+----
+smo backup free -profile SALES1 -label full_backup_sales_May
+Operation Id [8abc01ec0e79004b010e79006da60001] succeeded.
+----
+*Informações relacionadas*
+
+xref:task_freeing_backups.adoc[Liberando backups]

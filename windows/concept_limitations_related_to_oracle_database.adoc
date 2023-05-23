@@ -1,0 +1,33 @@
+---
+permalink: windows/concept_limitations_related_to_oracle_database.html 
+sidebar: sidebar 
+keywords: limitation, oracle, database 
+summary: Antes de começar a trabalhar com o SnapManager, você deve conhecer as limitações relacionadas ao banco de dados Oracle. 
+---
+= Limitações relacionadas ao banco de dados Oracle
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de começar a trabalhar com o SnapManager, você deve conhecer as limitações relacionadas ao banco de dados Oracle.
+
+As limitações são as seguintes:
+
+* O SnapManager oferece suporte às versões 10gR2, 11gR1, 11gR2 e 12__c__, mas não oferece suporte ao Oracle 10gR1 como repositório ou banco de dados de destino.
+* O SnapManager não suporta o uso de um endereço IP DE DIGITALIZAÇÃO em vez de um nome de host.
++
+SCAN IP é um novo recurso no Oracle 11gR2.
+
+* O SnapManager não oferece suporte ao Oracle Cluster File System (OCFS).
+* O suporte para o banco de dados Oracle 9i está obsoleto do SnapManager 3,2.
+* O suporte para o banco de dados Oracle 10gR2 (anterior a 10,2.0,5) está obsoleto do SnapManager 3,3.1.
+
+
+
+NOTE: Identificar as diferentes versões dos bancos de dados Oracle suportados consultando a Matriz de interoperabilidade.
+
+*Informações relacionadas*
+
+http://support.netapp.com/NOW/products/interoperability/["Matriz de interoperabilidade: Support.NetApp.com/NOW/Products/Interoperability"]

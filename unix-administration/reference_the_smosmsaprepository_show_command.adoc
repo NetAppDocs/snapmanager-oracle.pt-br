@@ -1,0 +1,92 @@
+---
+permalink: unix-administration/reference_the_smosmsaprepository_show_command.html 
+sidebar: sidebar 
+keywords: command, display, information, repository, smo 
+summary: Este comando exibe informações sobre o repositório. 
+---
+= O comando smo repositório show
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Este comando exibe informações sobre o repositório.
+
+
+
+== Sintaxe
+
+[listing]
+----
+
+        smo repository show
+-repository
+-dbname repo_service_name
+-host repo_host
+-port repo_port
+-login -username repo_username
+\[-quiet \| -verbose\]
+----
+
+
+== Parâmetros
+
+* *-repositório*
++
+As opções que seguem -repositório especificam os detalhes do banco de dados para o repositório.
+
+* *-dbname repo_service_name*
++
+Especifica o nome do banco de dados que armazena o repositório. Use o nome global ou o SID.
+
+* *-host repo_host*
++
+Especifica o nome ou endereço IP do computador host no qual o banco de dados do repositório é executado.
+
+* *-login*
++
+Inicia os detalhes de login do repositório.
+
+* *-username repo_username*
++
+Especifica o nome de usuário necessário para acessar o banco de dados que armazena o repositório.
+
+* *-port repo_port*
++
+Especifica o número da porta TCP usado para acessar o banco de dados que armazena o repositório.
+
+* *-silencioso*
++
+Exibe apenas mensagens de erro no console. O padrão é exibir mensagens de erro e aviso.
+
+* *-verbose*
++
+Exibe mensagens de erro, aviso e informativas no console.
+
+
+
+
+
+== Exemplo de comando
+
+O exemplo a seguir mostra detalhes sobre o repositório no banco de dados SALESDB.
+
+[listing]
+----
+smo repository show -repository -dbname SALESDB -host server1
+-port 1521 -login -username admin
+Repository Definition:
+User Name: admin
+Host Name: server1
+Database Name: SALESDB
+Database Port: 1521
+Version: 28
+Hosts that have run operations using this repository: 2
+server2
+server3
+Profiles defined in this repository: 2
+GSF5A
+GSF3A
+Incomplete Operations: 0
+----

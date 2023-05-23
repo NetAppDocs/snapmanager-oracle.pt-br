@@ -1,0 +1,97 @@
+---
+permalink: windows/reference_the_smosmsapprofile_list_command.html 
+sidebar: sidebar 
+keywords: command, display, current, profile, smo 
+summary: Este comando exibe uma lista dos perfis atuais. 
+---
+= O comando smo profile list
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Este comando exibe uma lista dos perfis atuais.
+
+
+
+== Sintaxe
+
+[listing]
+----
+
+        smo profile list
+\[-quiet \| -verbose\]
+----
+
+
+== Parâmetros
+
+* *-silencioso*
++
+Exibe apenas mensagens de erro no console. O padrão é exibir mensagens de erro e aviso.
+
+* *-verbose*
++
+Exibe mensagens de erro, aviso e informativas no console.
+
+
+
+
+
+== Exemplo de comando
+
+O exemplo a seguir exibe os perfis existentes com seus detalhes.
+
+[listing]
+----
+smo profile list -verbose
+Profile name: FGTER
+Repository:
+  Database name: SMOREPO
+  SID: SMOREPO
+  Host: hotspur
+  Port: 1521
+  Username: swagrahn
+  Password: ********
+Profile name: TEST_RBAC
+Repository:
+  Database name: smorep
+  SID: smorep
+  Host: elbe.rtp.org.com
+  Port: 1521
+  Username: smosaal
+  Password: ********
+Profile name: TEST_RBAC_DP_PROTECT
+Repository:
+  Database name: smorep
+  SID: smorep
+  Host: elbe.rtp.org.com
+  Port: 1521
+  Username: smosaal
+  Password: ********
+Profile name: TEST_HOSTCREDEN_OFF
+Repository:
+  Database name: smorep
+  SID: smorep
+  Host: elbe.rtp.org.com
+  Port: 1521
+  Username: smosaal
+  Password: ********
+Profile name: SMK_PRF
+Repository:
+  Database name: smorep
+  SID: smorep
+  Host: elbe.rtp.org.com
+  Port: 1521
+  Username: smosaal
+  Password: ********
+Profile name: FGLEX
+Repository:
+  Database name: SMOREPO
+  SID: SMOREPO
+  Host: hotspur
+  Port: 1521
+  Username: swagrahn
+  Password: ********
+----

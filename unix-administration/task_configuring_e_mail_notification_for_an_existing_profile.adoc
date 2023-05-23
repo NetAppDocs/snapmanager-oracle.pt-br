@@ -1,0 +1,28 @@
+---
+permalink: unix-administration/task_configuring_e_mail_notification_for_an_existing_profile.html 
+sidebar: sidebar 
+keywords: updating, profile, configure, receive, email, notification, completion, database, operation, exist, comma-seperated, list 
+summary: Ao atualizar um perfil, você pode configurar para receber uma notificação por e-mail após a conclusão da operação do banco de dados. 
+---
+= Configurando a notificação por e-mail para um perfil existente
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ao atualizar um perfil, você pode configurar para receber uma notificação por e-mail após a conclusão da operação do banco de dados.
+
+* Você deve configurar o endereço de e-mail a partir do qual os alertas são enviados.
+* Você deve inserir um único endereço de e-mail ou vários endereços de e-mail para os quais os alertas serão enviados.
++
+Você pode usar uma lista separada por vírgulas para vários endereços. Você deve garantir que não há espaço entre a vírgula e o próximo endereço de e-mail. Opcionalmente, você também pode adicionar um assunto ao e-mail.
+
++
+.. [-profile-passwordprofile_password] [-database-dbnnamedb_dbname-host dB_host [-siddb_sid] [-login -usernamedb_password address1 address2 address1 address2
++
+Você pode usar a opção sucesso para receber uma notificação somente para operações bem-sucedidas do banco de dados e a opção falha para receber uma notificação somente para operações falhadas do banco de dados.
+
+
+
+

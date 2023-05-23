@@ -1,0 +1,18 @@
+---
+permalink: unix-administration/task_restarting_the_snapmanager_unix_host_server.html 
+sidebar: sidebar 
+keywords: restart, server, unix, host, cli, smo 
+summary: Você pode reiniciar o servidor em um host UNIX usando a CLI. 
+---
+= Reiniciando o servidor host SnapManager UNIX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode reiniciar o servidor em um host UNIX usando a CLI.
+
+. Para reiniciar o servidor, digite o seguinte comando:
+`smo_server restart`
+

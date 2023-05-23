@@ -1,0 +1,38 @@
+---
+permalink: unix-administration/task_mounting_backups.html 
+sidebar: sidebar 
+keywords: snapmanager, automatic, handle, mount, backup, available, host, scenario, rman, 7-mode 
+summary: 'O SnapManager manipula automaticamente a montagem de um backup para disponibilizá-lo ao host. Você também pode montar backups em cenários em que você usa uma ferramenta externa, como o Oracle Recovery Manager (RMAN), para acessar os arquivos no backup.' 
+---
+= Montagem de backups
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O SnapManager manipula automaticamente a montagem de um backup para disponibilizá-lo ao host. Você também pode montar backups em cenários em que você usa uma ferramenta externa, como o Oracle Recovery Manager (RMAN), para acessar os arquivos no backup.
+
+Se você estiver usando o RMAN, use a operação de montagem para alterar o estado de um backup (que permite o acesso) e a operação de desmontagem para alterar o estado de um backup (que remove o acesso).
+
+O comando smo backup mount exibe uma lista de caminhos onde as cópias Snapshot que consistem no backup foram montadas.
+
+Você pode usar a opção -from-secundary para montar o backup do armazenamento secundário. Se você não usar essa opção, o SnapManager monta o backup do armazenamento primário.
+
+Você deve especificar a opção -copy-id sempre que especificar a opção -from-secundary. Se houver mais de um backup no sistema de armazenamento secundário, a opção -copy-id é usada para especificar qual cópia de backup no armazenamento secundário deve ser usada para montar o backup,6
+
+
+NOTE: Se você estiver usando o Data ONTAP operando no modo 7, você deve especificar um valor válido para a opção -copy-id. No entanto, se você estiver usando o Clustered Data ONTAP, a opção -copy-id não é necessária.
+
+Se você estiver montando um backup de banco de dados em um host remoto, certifique-se de que as credenciais de Gerenciamento Automático de armazenamento (ASM) sejam as mesmas em ambos os hosts.
+
+
+NOTE: Opcionalmente, você pode coletar os arquivos de despejo após uma operação de montagem de backup bem-sucedida ou com falha.
+
+. Para montar uma cópia de segurança, introduza o seguinte comando:
+`smo backup mount -profile profile_name {labellabel [data | -archivelogs] | -idid} [-host-host] [-from-secondary [-copy-id id]] [-dump] [-quiet | -verbose]`
+
+
+*Informações relacionadas*
+
+xref:reference_the_smosmsapbackup_mount_command.adoc[O comando smo backup mount]

@@ -1,0 +1,81 @@
+---
+permalink: windows/reference_the_smosmsapprofile_sync_command.html 
+sidebar: sidebar 
+keywords: command, load, profile-to-repository, mapping, repository, file, directory, smo 
+summary: Este comando carrega os mapeamentos de perfil para repositório para esse repositório em um arquivo no diretório home no host local. 
+---
+= O comando smo Profile Sync
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Este comando carrega os mapeamentos de perfil para repositório para esse repositório em um arquivo no diretório home no host local.
+
+
+
+== Sintaxe
+
+[listing]
+----
+
+        smo profile sync
+-repository
+-dbname repo_service_name
+-host repo_host
+-port repo_port
+-login
+-username repo_username
+				\[-quiet \| -verbose\]
+----
+
+
+== Parâmetros
+
+* *-repositório*
++
+As opções que seguem -repositório especificam os detalhes do banco de dados para o repositório.
+
+* *-dbname repo_service_name*
++
+Especifica o banco de dados do repositório para o perfil a sincronizar.
+
+* *-host*
++
+Especifica o host do banco de dados.
+
+* *-porta*
++
+Especifica a porta do host.
+
+* *-login*
++
+Especifica o processo de login para o usuário do host.
+
+* *-username*
++
+Especifica o nome de usuário para o host.
+
+* *-silencioso*
++
+Exibe apenas mensagens de erro no console. O padrão é exibir mensagens de erro e aviso.
+
+* *-verbose*
++
+Exibe mensagens de erro, aviso e informativas no console.
+
+
+
+
+
+== Exemplo de comando
+
+O exemplo a seguir mostra o resultado do comando para sincronizar os mapeamentos de perfil para repositório para o banco de dados.
+
+[listing]
+----
+smo profile sync -repository -dbname smrepo -host Host2 -port 1521 -login -username user2
+SMO-12345 [INFO ]: Loading profile mappings for repository "user2@Host2:smrepo" into cache for OS User "admin".
+Operation Id [Nff8080810da9018f010da901a0170001] succeeded.
+----

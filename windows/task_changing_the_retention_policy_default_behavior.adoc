@@ -1,0 +1,31 @@
+---
+permalink: windows/task_changing_the_retention_policy_default_behavior.html 
+sidebar: sidebar 
+keywords: backup, expire, retention, policy, snapmanager, delete, settings, default, behavior, protect, unprotected 
+summary: Quando um backup expira com base na política de retenção, o SnapManager determina se deseja excluir o backup com base nas configurações de retenção. A exclusão de backups é o comportamento padrão. Você pode alterar esse comportamento padrão e optar por liberar os backups desprotegidos. 
+---
+= Alterar o comportamento padrão da política de retenção
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Quando um backup expira com base na política de retenção, o SnapManager determina se deseja excluir o backup com base nas configurações de retenção. A exclusão de backups é o comportamento padrão. Você pode alterar esse comportamento padrão e optar por liberar os backups desprotegidos.
+
+Por padrão, o Snap Manager exclui o backup quando eles expiram.
+
+. Acesse o seguinte local padrão:
++
+local de instalação padrão do smo.config
+
+. Edite o arquivo smo.config.
+. Defina a propriedade ret.alwaysFreeExpiredBackups no arquivo smo.config como true.
++
+Por exemplo, ret.alwaysFreeExpiredBackups: True
+
+
+
+*Informações relacionadas*
+
+xref:reference_the_smosmsapbackup_update_command.adoc[O comando smo backup update]

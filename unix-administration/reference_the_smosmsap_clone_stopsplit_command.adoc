@@ -1,0 +1,57 @@
+---
+permalink: unix-administration/reference_the_smosmsap_clone_stopsplit_command.html 
+sidebar: sidebar 
+keywords: command, stop, running, clone, split, process, split-stop, smo 
+summary: Este comando interrompe o processo de divisão de clones em execução. 
+---
+= O comando smo clone split-stop
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Este comando interrompe o processo de divisão de clones em execução.
+
+
+
+== Sintaxe
+
+[listing]
+----
+
+        smo clone split-stop
+-profile profile
+\[-host hostname\]
+\[-label split-label \| -id split-id\]
+\[-quiet \| -verbose\]
+----
+
+
+== Parâmetros
+
+* *-perfil de perfil*
++
+Especifica o nome do perfil do clone.
+
+* *-host hostname*
++
+Especifica o nome do host no qual o clone existe.
+
+* *-label split-label*
++
+Especifica o nome do rótulo gerado pelo processo de clone.
+
+* *-id split-id*
++
+Especifica o ID exclusivo gerado pelo processo de clone.
+
+* *-silencioso*
++
+Exibe apenas mensagens de erro no console. O padrão é exibir mensagens de erro e aviso.
+
+* *-verbose*
++
+Exibe mensagens de erro, aviso e informativas no console.
+
+

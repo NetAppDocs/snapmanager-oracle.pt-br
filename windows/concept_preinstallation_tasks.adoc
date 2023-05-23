@@ -1,0 +1,37 @@
+---
+permalink: windows/concept_preinstallation_tasks.html 
+sidebar: sidebar 
+keywords: install, snapmanager, oracle, environment, preinstallation, task 
+summary: Antes de instalar o SnapManager para Oracle, você deve executar algumas tarefas adicionais para configurar seu ambiente. As tarefas que você precisa executar dependem do sistema operacional, dos componentes Oracle e da versão do banco de dados que deseja usar. 
+---
+= Tarefas de pré-instalação
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de instalar o SnapManager para Oracle, você deve executar algumas tarefas adicionais para configurar seu ambiente. As tarefas que você precisa executar dependem do sistema operacional, dos componentes Oracle e da versão do banco de dados que deseja usar.
+
+* Instale o sistema operacional licenciado com os patches apropriados.
+* Defina os idiomas do sistema operacional e do banco de dados Oracle para inglês.
++
+Por exemplo, para definir o idioma do banco de dados Oracle para inglês, atribua NLS_LANG: AMERICAN_America.WE8MSWIN1252. Para obter mais informações sobre como definir o idioma, consulte a seção _Troubleshooting SnapManager for Oracle_.
+
+* Instale o Gerenciador de recuperação Oracle (RMAN) se você quiser usar o RMAN com o SnapManager para Oracle.
+* Instale o Data ONTAP com as licenças habilitadas para o SnapRestore e os protocolos compatíveis, como Fibre Channel (FC) e iSCSI em todos os sistemas de storage.
+* Instale os seguintes patches Oracle, se você estiver usando os bancos de dados Oracle 11.2.0.2 e 11,2.0,3:
++
+** 13413167 para Windows de 32 bits
+** 13555974 para Windows de 64 bits
+
+
+
+
+*Informações relacionadas*
+
+xref:reference_troubleshooting_snapmanager.adoc[Solução de problemas do SnapManager]
+
+http://support.netapp.com/NOW/products/interoperability/["Matriz de interoperabilidade NetApp: Support.NetApp.com/NOW/products/Interoperability"]
+
+http://media.netapp.com/documents/tr-3761.pdf["Melhores práticas do SnapManager para Oracle: Media.NetApp.com/Documents/tr-3761.pdf"]

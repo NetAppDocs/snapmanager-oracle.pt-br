@@ -1,0 +1,51 @@
+---
+permalink: windows/task_performing_backup_restore_and_clone_operations_using_prescript_and_post_scripts.html 
+sidebar: sidebar 
+keywords: script, initiating, initiate, backup, restore, clone, operation, snapmanager, task-enabling, perform, post-script 
+summary: Você pode usar seu próprio script enquanto inicia uma operação de backup, restauração ou clone. O SnapManager exibe uma página de ativação de tarefas no assistente criar backup, no assistente Restaurar ou recuperar ou no assistente criar clone, onde você pode selecionar o script e fornecer valores para todos os parâmetros exigidos pelo script. 
+---
+= Executar operações de backup, restauração e clone usando prescript e pós-scripts
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode usar seu próprio script enquanto inicia uma operação de backup, restauração ou clone. O SnapManager exibe uma página de ativação de tarefas no assistente criar backup, no assistente Restaurar ou recuperar ou no assistente criar clone, onde você pode selecionar o script e fornecer valores para todos os parâmetros exigidos pelo script.
+
+* Instale os scripts de plug-in no local de instalação correto do SnapManager.
+* Verifique se os plug-ins estão instalados corretamente usando o comando smsap plugin check.
+* Certifique-se de que você está usando o shell BASH.
+
+
+Na interface de linha de comando (CLI), liste o nome do script, selecione os parâmetros e defina os valores.
+
+. Para verificar se você está usando o shell BASH, digite o seguinte comando no prompt de comando:bash
++
+Como alternativa, você pode inserir o comando which-bash no prompt e usar o comando output como parâmetro de início do script.
+
++
+O shell BASH está funcionando corretamente se você não vê um erro.
+
+. Para a operação de backup, digite a opção -tasksspec e forneça o caminho absoluto do arquivo XML de especificação de tarefa para executar uma atividade de pré-processamento ou pós-processamento para ocorrer antes ou depois da operação de backup destpath1 path2 destpath1 path2 dest1 dest2:
++
+Se a operação do plug-in de backup falhar, somente o nome do plug-in e o código de retorno serão exibidos. Seu script de plug-in deve incluir mensagens de log e redirecionar as mensagens para os arquivos de log definidos pelo usuário.
+
+. Para a operação de restauração de backup, digite a opção -taskspecc e forneça o caminho absoluto do arquivo XML de especificação de tarefa para executar uma atividade de pré-processamento ou pós-processamento para ocorrer antes ou após a operação de restauração <label> <id> <files> <tablespaces> <until> <restorespec> <taskspec>:
++
+Se a operação de restauração do plug-in falhar, somente o nome do plug-in e o código de retorno serão exibidos. Seu script de plug-in deve incluir mensagens de log e redirecionar as mensagens para os arquivos de log definidos pelo usuário.
+
+. Para a operação de criação de clone, digite a opção -taskspecc e forneça o caminho absoluto do arquivo XML de especificação de tarefa para executar uma atividade de pré-processamento ou pós-processamento para ocorrer antes ou depois da operação de clone <backup-id> <host> <label> <comment> <taskspec>:
++
+Se a operação do plug-in clone falhar, somente o nome do plug-in e o código de retorno serão exibidos. Seu script de plug-in deve incluir mensagens de log e redirecionar as mensagens para os arquivos de log definidos pelo usuário.
+
+
+
+
+
+== Exemplo de criação de um backup usando o arquivo XML de especificação de tarefa
+
+[listing]
+----
+smo backup create -profile SALES1 -full -online -taskspec sales1_taskspec.xml -force -verify
+----

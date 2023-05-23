@@ -1,0 +1,28 @@
+---
+permalink: windows/task_mounting_backups.html 
+sidebar: sidebar 
+keywords: snapmanager, automatic, handle, mount, backup, available, host, scenario, oracle, recovery, manager, rman 
+summary: 'O SnapManager manipula automaticamente a montagem de um backup para disponibilizá-lo ao host. Você também pode montar backups em cenários em que você usa uma ferramenta externa, como o Oracle Recovery Manager (RMAN), para acessar os arquivos no backup.' 
+---
+= Montagem de backups
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O SnapManager manipula automaticamente a montagem de um backup para disponibilizá-lo ao host. Você também pode montar backups em cenários em que você usa uma ferramenta externa, como o Oracle Recovery Manager (RMAN), para acessar os arquivos no backup.
+
+Se você estiver usando o RMAN, use a operação de montagem para alterar o estado de um backup (que permite o acesso) e a operação de desmontagem para alterar o estado de um backup (que remove o acesso).
+
+O comando smo backup mount exibe uma lista de caminhos onde as cópias Snapshot que consistem no backup foram montadas.
+
+
+NOTE: Opcionalmente, você pode coletar os arquivos de despejo após uma operação de montagem de backup bem-sucedida ou com falha.
+
+. Para montar um backup digite o seguinte comando: smo backup mount -profile_name [data | -archivelogs] | -idID [-host] [-dump] [-quiet | -verbose]
+
+
+*Informações relacionadas*
+
+xref:reference_the_smosmsapbackup_mount_command.adoc[O comando smo backup mount]

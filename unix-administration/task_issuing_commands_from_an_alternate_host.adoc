@@ -1,0 +1,20 @@
+---
+permalink: unix-administration/task_issuing_commands_from_an_alternate_host.html 
+sidebar: sidebar 
+keywords: issue, cli, command, host, database, snapmanager, route, appropriate, alternate 
+summary: Você pode emitir comandos CLI de um host diferente do host do banco de dados e o SnapManager encaminhará os comandos inseridos para o host apropriado. 
+---
+= Emissão de comandos de um host alternativo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode emitir comandos CLI de um host diferente do host do banco de dados e o SnapManager encaminhará os comandos inseridos para o host apropriado.
+
+Para que o sistema envie uma operação para o host correto, ele deve primeiro saber onde encontrar o perfil para a operação. Neste procedimento, o sistema mantém as informações de mapeamento do perfil para o repositório de um arquivo no diretório inicial do usuário no host local.
+
+. Para que o diretório home do usuário local saiba dos mapeamentos de perfil para repositório para que ele possa rotear a solicitação de operação, digite o seguinte comando:
+`smo profile sync -repository-dbname repo_dbname-host repo_host-port repo_port-login-username repo_username [-quiet | -verbose]`
+

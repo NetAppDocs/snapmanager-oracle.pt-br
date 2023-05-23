@@ -1,0 +1,28 @@
+---
+permalink: unix-installation-7mode/concept_backing_up_and_verifying_your_databases.html 
+sidebar: sidebar 
+keywords: install, snapmanager, create, basic, backup, database, verify, corrupt, file 
+summary: Depois de instalar o SnapManager, você pode criar um backup básico do seu banco de dados e verificar se ele não contém nenhum arquivo corrompido. 
+---
+= Fazer backup e verificar seus bancos de dados
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Depois de instalar o SnapManager, você pode criar um backup básico do seu banco de dados e verificar se ele não contém nenhum arquivo corrompido.
+
+*Informações relacionadas*
+
+xref:concept_snapmanager_backup_overview.adoc[Visão geral do backup do SnapManager]
+
+xref:concept_defining_a_backup_strategy.adoc[Definir uma estratégia de backup]
+
+xref:task_creating_a_profile_for_your_database.adoc[Criar um perfil para o seu banco de dados]
+
+xref:task_backing_up_your_database.adoc[Fazer backup de seu banco de dados]
+
+xref:task_verifying_database_backups.adoc[Verificando backups de bancos de dados]
+
+xref:task_scheduling_recurring_backups.adoc[Agendamento de backups recorrentes]

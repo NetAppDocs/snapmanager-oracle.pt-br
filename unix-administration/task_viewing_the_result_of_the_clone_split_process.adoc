@@ -1,0 +1,23 @@
+---
+permalink: unix-administration/task_viewing_the_result_of_the_clone_split_process.html 
+sidebar: sidebar 
+keywords: view, result, clone, split, process, start, smo 
+summary: Você pode ver o resultado do processo de divisão de clones iniciado. 
+---
+= Visualização do resultado do processo de divisão de clones
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode ver o resultado do processo de divisão de clones iniciado.
+
+. Para visualizar o resultado do processo de divisão de clones, digite o seguinte comando:
+`smo clone split-result -profileprofile [-hosthostname] [-labelsplit-label | -idsplit-id] [-quiet | -verbose]`
+
+
+[listing]
+----
+smo clone split-result -profile p1 -id 8abc01ec0e78f3e2010e78f3fdd00001
+----

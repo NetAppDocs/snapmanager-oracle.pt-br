@@ -1,0 +1,59 @@
+---
+permalink: unix-administration/reference_the_smosmsap_profile_destroy_command.html 
+sidebar: sidebar 
+keywords: command, delete, split, clone, database, profile, generate, snapmanager, process 
+summary: 'Este comando exclui o clone dividido (banco de dados) junto com o perfil gerado pelo SnapManager durante o processo de divisão de clones.' 
+---
+= O comando smo profile Destroy
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Esse comando exclui o clone dividido (banco de dados) junto com o perfil gerado pelo SnapManager durante o processo de divisão de clones.
+
+
+
+== Sintaxe
+
+[listing]
+----
+
+        smo profile destroy
+-profile profile
+\[-host hostname\]
+\[-quiet \| -verbose\]
+----
+
+
+== Parâmetros
+
+* *-perfil de perfil*
++
+Especifica o perfil que o SnapManager gera após um processo de divisão de clones bem-sucedido.
+
+* *-host hostname*
++
+Especifica o nome do host no qual o clone de divisão existe.
+
+* *-silencioso*
++
+Exibe apenas mensagens de erro no console. O padrão é exibir mensagens de erro e aviso.
+
+* *-verbose*
++
+Exibe mensagens de erro, aviso e informativas no console.
+
+
+
+
+
+== Exemplo de comando
+
+O exemplo a seguir exclui o perfil chamado SALES1.
+
+[listing]
+----
+smo profile destroy -profile SALES1
+----

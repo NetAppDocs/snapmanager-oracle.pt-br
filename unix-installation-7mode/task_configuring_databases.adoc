@@ -1,0 +1,14 @@
+---
+permalink: unix-installation-7mode/task_configuring_databases.html 
+sidebar: sidebar 
+keywords: configure, oracle, database, snapmanager, online 
+summary: Você deve configurar pelo menos dois bancos de dados Oracle, um banco de dados de destino que você deseja fazer backup usando o SnapManager e um banco de dados de repositório para armazenar os metadados do banco de dados de destino. O banco de dados de destino e o banco de dados de repositório do SnapManager devem ser configurados e on-line antes de executar operações do SnapManager. 
+---
+= Configurando bancos de dados
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você deve configurar pelo menos dois bancos de dados Oracle: Um banco de dados de destino que você deseja fazer backup usando o SnapManager; e um banco de dados de repositório para armazenar os metadados do banco de dados de destino. O banco de dados de destino e o banco de dados de repositório do SnapManager devem ser configurados e on-line antes de executar operações do SnapManager.

@@ -1,0 +1,46 @@
+---
+permalink: unix-installation-7mode/reference_product_overview.html 
+sidebar: sidebar 
+keywords: automate, simplifies, complex, manual, time-consuming, process, associate, backup, recover, cloning, oracle, database, snapvault, data, ontap, technology 
+summary: Automatiza e simplifica processos complexos, manuais e demorados associados ao backup, recuperação e clonagem de bancos de dados Oracle. Você pode usar o SnapManager com a tecnologia Data ONTAP SnapMirror para criar cópias de backups em outro volume e com a tecnologia Data ONTAP SnapVault para arquivar backups com eficiência no disco. 
+---
+= Visão geral do produto
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Automatiza e simplifica processos complexos, manuais e demorados associados ao backup, recuperação e clonagem de bancos de dados Oracle. Você pode usar o SnapManager com a tecnologia Data ONTAP SnapMirror para criar cópias de backups em outro volume e com a tecnologia Data ONTAP SnapVault para arquivar backups com eficiência no disco.
+
+O SnapManager é integrado a tecnologias nativas da Oracle, como clusters de aplicativos reais (Oracle RAC), gerenciamento automático de storage (ASM) e NFS direto nos protocolos FC, iSCSI e NFS. Opcionalmente, os backups criados usando o SnapManager podem ser catalogados com o Oracle Recovery Manager (RMAN) para preservar as informações de backup; esses backups podem ser usados posteriormente em operações de restauração em nível de bloco ou de recuperação pontual.
+
+
+
+== Destaques do SnapManager
+
+O SnapManager oferece integração perfeita com bancos de dados Oracle no host UNIX e com as tecnologias NetApp Snapshot, SnapRestore e FlexClone no back-end Ele oferece uma interface de usuário (UI) fácil de usar, bem como interface de linha de comando (CLI) para funções administrativas.
+
+Com o SnapManager, você executa as seguintes operações de banco de dados e gerencia os dados com eficiência:
+
+* Criação de backups com uso eficiente de espaço em storage primário ou secundário
++
+O SnapManager permite fazer backup dos arquivos de dados e arquivar arquivos de log separadamente.
+
+* Agendamento de backups
+* Restaurar bancos de dados completos ou parciais usando uma operação de restauração baseada em arquivo ou baseada em volume
+* Recuperação de bancos de dados descobrindo, montando e aplicando arquivos de log de arquivamento de backups
+* Eliminação de ficheiros de registo de arquivo a partir de destinos de registo de arquivo ao criar cópias de segurança apenas dos registos de arquivo
+* Reter automaticamente um número mínimo de backups de log de arquivamento mantendo apenas os backups que contêm arquivos de log de arquivo exclusivos
+* Acompanhar detalhes da operação e gerar relatórios
+* Verificação de backups para garantir que os backups estejam em um formato de bloco válido e que nenhum dos arquivos de backup esteja corrompido
+* Manter um histórico de operações realizadas no perfil do banco de dados
++
+Um perfil contém informações sobre o banco de dados a ser gerenciado pelo SnapManager.
+
+* Proteção de backups em sistemas de storage secundário e terciário.
+* Criação de clones de backups com uso eficiente de espaço no storage primário ou secundário
++
+O SnapManager permite dividir um clone de um banco de dados.
+
+

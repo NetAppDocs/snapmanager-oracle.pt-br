@@ -1,0 +1,76 @@
+---
+permalink: windows/reference_the_smosmsapbackup_list_command.html 
+sidebar: sidebar 
+keywords: run, backup, list, command, display, information, profile, retention, protection, status, smo 
+summary: Você pode executar o comando backup list para exibir informações sobre os backups em um perfil, incluindo informações sobre a classe de retenção e o status de proteção. 
+---
+= O comando smo backup list
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode executar o comando backup list para exibir informações sobre os backups em um perfil, incluindo informações sobre a classe de retenção e o status de proteção.
+
+
+
+== Sintaxe
+
+[listing]
+----
+
+        smo backup list
+-profile profile_name
+-delimiter character
+[-data | -archivelogs | -all]
+\[-quiet \| -verbose\]
+----
+
+
+== Parâmetros
+
+* *-profile profile_name*
++
+Especifica o perfil para o qual você deseja listar os backups. O perfil contém o identificador da base de dados e outras informações da base de dados.
+
+* *-delimitador de caractere*
++
+Exibe cada linha em uma linha separada. Os atributos na linha são separados pelo caractere especificado.
+
+* *-data*
++
+Especifica os arquivos de dados.
+
+* *-archivelogs*
++
+Especifica os arquivos de log de arquivamento.
+
+* *-silencioso*
++
+Exibe apenas mensagens de erro no console. O padrão é exibir mensagens de erro e aviso.
+
+* *-verbose*
++
+Exibe mensagens de erro, aviso e informativas no console. Inclua a opção -verbose para exibir os IDs de backup.
+
+
+
+
+
+== Exemplo
+
+O exemplo a seguir lista os backups para o perfil SALES1:
+
+[listing]
+----
+smo backup list -profile SALES1 -verbose
+Start Date          Status  Scope  Mode    Primary  Label      Retention   Protection
+------------------- ------- ------ ------- -------- -----      --------    ----------
+2007-08-10 14:12:31 SUCCESS FULL   ONLINE  EXISTS   backup2    HOURLY      NOT REQUESTED
+2007-08-05 12:08:37 SUCCESS FULL   ONLINE  EXISTS   backup4    UNLIMITED   NOT REQUESTED
+2007-08-04 22:03:09 SUCCESS FULL   ONLINE  EXISTS   backup6    UNLIMITED   NOT REQUESTED
+----
+*Informações relacionadas*
+
+xref:task_viewing_a_list_of_backups.adoc[Exibindo uma lista de backups]

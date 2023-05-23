@@ -1,0 +1,18 @@
+---
+permalink: unix-administration/task_removing_history_configuration_associated_with_a_single_profile_or_multiple_profiles.html 
+sidebar: sidebar 
+keywords: snapmanager, enable, remove, history, setting, operation, purge, information, associate, multiple, profile single 
+summary: O SnapManager permite remover as definições do histórico de uma operação SnapManager. Esta operação elimina todas as informações de histórico associadas a um único perfil ou vários perfis. 
+---
+= Removendo configurações de histórico associadas a um único perfil ou vários perfis
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O SnapManager permite remover as definições do histórico de uma operação SnapManager. Esta operação elimina todas as informações de histórico associadas a um único perfil ou vários perfis.
+
+. Para remover o histórico de operações do SnapManager associadas a um único perfil ou vários perfis, digite o seguinte comando:
+`smo history remove -profile {-name, profile_name [profile_name1, profile_name2] | all-repository-login [-passwordrepo_password] -usernamerepo_username-dbnamerepo_dbname-hostrepo_host-portrepo_port} -operation {-operationsoperation_name [operation_name1, operation_name2] | -all} [-quiet | -verbose]`
+

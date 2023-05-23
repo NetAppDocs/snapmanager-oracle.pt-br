@@ -1,0 +1,26 @@
+---
+permalink: unix-administration/task_restoring_backups_from_an_alternate_location.html 
+sidebar: sidebar 
+keywords: restore, backup, alternate, location, data, file, intermediate, system, active, smo, xml 
+summary: Você pode restaurar backups de um local alternativo para restaurar os arquivos de dados de um sistema de arquivos intermediário para um sistema de arquivos ativo ou restaurar os blocos de dados de um dispositivo bruto intermediário para um dispositivo bruto ativo. 
+---
+= Restaurar backups de um local alternativo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode restaurar backups de um local alternativo para restaurar os arquivos de dados de um sistema de arquivos intermediário para um sistema de arquivos ativo ou restaurar os blocos de dados de um dispositivo bruto intermediário para um dispositivo bruto ativo.
+
+* Crie um arquivo XML de especificação de restauração e especifique o tipo de método de restauração que deseja usar.
+
+
+Você pode usar o comando smo backup restore e especificar o arquivo XML de especificação de restauração criado para restaurar o backup de um local alternativo.
+
+. Digite o seguinte comando: smo backup restore -profileprofile-labellabel-complete-alllogs-restorespec
+
+
+*Informações relacionadas*
+
+xref:reference_the_smosmsapbackup_restore_command.adoc[O comando smo backup restore]

@@ -1,0 +1,16 @@
+---
+permalink: windows/concept_introduction_to_data_protection_in_snapmanager.html 
+sidebar: sidebar 
+keywords: data, protection, support, backup, secondary, tertiary, storage, system, snapmirror, snapvault 
+summary: O SnapManager é compatível com a proteção de dados para proteger os backups em sistemas de storage secundário ou terciário. É necessário configurar as relações SnapMirror e SnapVault entre os volumes de origem e destino. 
+---
+= Introdução à proteção de dados no SnapManager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O SnapManager é compatível com a proteção de dados para proteger os backups em sistemas de storage secundário ou terciário. É necessário configurar as relações SnapMirror e SnapVault entre os volumes de origem e destino.
+
+Você pode usar os scripts pós-backup da interface de linha de comando (CLI) e da interface gráfica do usuário (GUI) para proteger os backups em um sistema de storage primário.

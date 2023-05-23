@@ -1,0 +1,57 @@
+---
+permalink: unix-administration/reference_the_smosmsap_clone_splitstatus_command.html 
+sidebar: sidebar 
+keywords: command, progress, run, split, process 
+summary: Este comando permite que você saiba o andamento da execução do processo de divisão. 
+---
+= O comando smo clone split-status
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Este comando permite que você saiba o andamento da execução do processo de divisão.
+
+
+
+== Sintaxe
+
+[listing]
+----
+
+        smo clone split-status
+-profile profile
+\[-host hostname\]
+\[-label split-label \| -id split-id\]
+\[-quiet \| -verbose\]
+----
+
+
+== Parâmetros
+
+* *-perfil de perfil*
++
+Especifica o nome do perfil do clone.
+
+* *-host hostname*
++
+Especifica o nome do host no qual o clone existe.
+
+* *-label split-label*
++
+Especifica o nome do rótulo gerado pelo processo de clone.
+
+* *-id split-id*
++
+Especifica o ID exclusivo gerado pelo processo de clone.
+
+* *-silencioso*
++
+Exibe apenas mensagens de erro no console. O padrão é exibir mensagens de erro e aviso.
+
+* *-verbose*
++
+Exibe mensagens de erro, aviso e informativas no console.
+
+

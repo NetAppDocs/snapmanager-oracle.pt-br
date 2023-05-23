@@ -1,0 +1,17 @@
+---
+permalink: windows/task_adding_existing_profile_to_summary_notification.html 
+sidebar: sidebar 
+keywords: snapmanager, enable, exist, profile, summary, email, notification, updating 
+summary: O SnapManager permite adicionar um perfil existente a uma notificação de e-mail de resumo durante a atualização desse perfil. 
+---
+= Adicionando um perfil existente às notificações de resumo por e-mail
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O SnapManager permite adicionar um perfil existente a uma notificação de e-mail de resumo durante a atualização desse perfil.
+
+. Digite o seguinte comando: smo profileprofile_name [-profile-passwordprofile_password] -repositório-dbnamerepo_Service_name-hostrepo_host-portrepo_port-login-usernamerepo_database-dbnamedb_dbname-hostdb_host [-nomedb] [-nomedb] [-nomedb] [-nomedb]
+

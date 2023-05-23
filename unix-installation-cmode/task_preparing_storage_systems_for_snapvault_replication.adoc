@@ -1,0 +1,109 @@
+---
+permalink: unix-installation-cmode/task_preparing_storage_systems_for_snapvault_replication.html 
+sidebar: sidebar 
+keywords: snapmanager, integrated, snapvault, technology, archive, snapshot, copies, disk, configure, data-portection, source, volume, relationship, initialization, snapshot 
+summary: Antes de usar a tecnologia SnapVault integrada do SnapManager para arquivar cópias Snapshot no disco, é necessário configurar uma relação de proteção de dados entre os volumes de origem e destino e, em seguida, inicializar a relação. Na inicialização, o SnapVault faz uma cópia Snapshot do volume de origem e, em seguida, transfere a cópia e todos os blocos de dados que ela faz referência ao volume de destino. 
+---
+= Preparação de sistemas de storage para replicação do SnapVault
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de usar a tecnologia SnapVault integrada do SnapManager para arquivar cópias Snapshot no disco, é necessário configurar uma relação de proteção de dados entre os volumes de origem e destino e, em seguida, inicializar a relação. Na inicialização, o SnapVault faz uma cópia Snapshot do volume de origem e, em seguida, transfere a cópia e todos os blocos de dados que ela faz referência ao volume de destino.
+
+* É necessário criar os volumes de origem e destino em clusters com peering com máquinas virtuais de armazenamento em linha (SVMs). Para obter mais informações, consulte o _Clustered Data ONTAP Cluster Peering Express Guide_.
+* Você deve ser um administrador de cluster.
+
+
+Você pode usar a interface de linha de comando (CLI) do Data ONTAP ou o OnCommand System Manager para criar relacionamentos do SnapVault. O procedimento a seguir pressupõe que você esteja usando a CLI. Para obter informações sobre como criar relacionamento com o SnapVault usando o OnCommand System Manager, consulte o _Clustered Data ONTAP volume Backup usando o SnapVault Express Guide_.
+
+A ilustração a seguir mostra o procedimento para inicializar uma relação SnapVault:
+
+image::../media/snapvault_steps_clustered.gif[Esta ilustração mostra o procedimento para inicializar uma relação SnapVault: Identificando o cluster de destino,creating a destination volume,creating a policy]
+
+. Identificar o cluster de destino.
+. No cluster de destino, use o comando volume create com a opção -typeDP para criar um volume de destino SnapVault que seja o mesmo ou maior em tamanho do que o volume de origem.
++
+
+IMPORTANT: A definição de idioma do volume de destino tem de corresponder à definição de idioma do volume de origem.
+
++
+O comando a seguir cria um volume de destino de 2 GB chamado dstvolB em SVM2 no agregado node01_aggr:
+
++
+[listing]
+----
+cluster2::> volume create -vserver SVM2 -volume dstvolB -aggregate node01_aggr -type DP
+-size 2GB
+----
+. No SVM de destino, use o comando SnapMirror policy create para criar uma política do SnapVault.
++
+O comando a seguir cria a política em toda a SVM SVM1-Vault:
+
++
+[listing]
+----
+SVM2::> snapmirror policy create -vserver SVM2 -policy SVM1-vault
+----
++
+
+NOTE: Não defina um cronograma do cron ou uma política de cópia Snapshot para o relacionamento do SnapVault. O SnapManager faz isso para você quando você cria um agendamento de backup.
+
+. Use o comando de complemento de política do SnapMirror para adicionar uma regra à política que define os seguintes rótulos de cópia Snapshot e a política de retenção para cada rótulo:
++
+** Diariamente
+** Semanalmente
+** Mensalmente
+** Por hora
+** Ilimitado *importante:* os rótulos são sensíveis a maiúsculas e minúsculas.
+
+
++
+Estes são rótulos fixos que o SnapManager usa. Selecione uma destas opções quando arquivar uma cópia de segurança. Você deve executar este comando uma vez para cada uma das regras que você está adicionando.
+
++
+O comando a seguir adiciona uma regra à política do SVM1-Vault que define o rótulo "diário" e especifica que trinta cópias Snapshot correspondentes ao rótulo devem ser mantidas no Vault:
+
++
+E
+
++
+[listing]
+----
+SVM2::> snapmirror policy add-rule -vserver SVM2 -policy SVM1-vault
+-snapmirror-label Daily -keep 30
+----
+. Use o comando SnapMirror create com o parâmetro -type XDP e o parâmetro -policy para criar um relacionamento SnapVault e atribuir uma política de Vault.
++
+O tipo XDP define a relação como uma relação SnapVault.
+
++
+O comando a seguir cria uma relação SnapVault entre o volume de origem srcvolA no SVM1 e o volume de destino dstvolB no SVM2. Ele atribui a política chamada SVM1-Vault:
+
++
+[listing]
+----
+SVM2::> snapmirror create -source-path SVM1:srcvolA -destination-path SVM2:dstvolB
+-type XDP -policy SVM1-vault
+----
+. Use o comando SnapMirror initialize para inicializar o relacionamento.
++
+O processo de inicialização executa uma transferência de linha de base para o volume de destino. O SnapMirror faz uma cópia Snapshot do volume de origem e transfere a cópia e todos os blocos de dados que ele faz referência ao volume de destino.
+
++
+O comando a seguir inicializa a relação entre o volume de origem srcvolA em SVM1 e o volume de destino dstvolB em SVM2:
+
++
+[listing]
+----
+SVM2::> snapmirror initialize -destination-path SVM2:dstvolB
+----
+
+
+*Informações relacionadas*
+
+https://library.netapp.com/ecm/ecm_download_file/ECMP1547469["Guia expresso de peering de cluster do Clustered Data ONTAP 8.3"]
+
+https://library.netapp.com/ecm/ecm_download_file/ECMP1653496["Backup em volume do Clustered Data ONTAP 8.3 usando o Guia expresso do SnapVault"]

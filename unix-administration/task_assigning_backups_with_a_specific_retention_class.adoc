@@ -1,0 +1,17 @@
+---
+permalink: unix-administration/task_assigning_backups_with_a_specific_retention_class.html 
+sidebar: sidebar 
+keywords: dba, assign, specific, retention, class, hourly, daily, weekly, monthly, backup, assign 
+summary: Os DBAs podem atribuir uma classe de retenção específica de cada hora, dia, semanal ou mensal aos backups. A atribuição de uma classe de retenção específica torna os backups executados sob essa alteração elegíveis para exclusão. 
+---
+= Atribuindo backups com uma classe de retenção específica
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Os DBAs podem atribuir uma classe de retenção específica de cada hora, dia, semanal ou mensal aos backups. A atribuição de uma classe de retenção específica torna os backups executados sob essa alteração elegíveis para exclusão.
+
+. Para atribuir uma classe de retenção de backup específica, digite este comando:smo backup update -profileprofile_name [data | -archivelogs] | -idd | all] -ret [-Hourly | -daily | -Weekly | -monthly]
+

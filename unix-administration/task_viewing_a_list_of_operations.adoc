@@ -1,0 +1,35 @@
+---
+permalink: unix-administration/task_viewing_a_list_of_operations.html 
+sidebar: sidebar 
+keywords: view, summary, list, operation, perform, profile, smo 
+summary: Você pode ver uma lista de resumo de todas as operações realizadas em um perfil. 
+---
+= Visualizar uma lista de operações
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode ver uma lista de resumo de todas as operações realizadas em um perfil.
+
+Você pode exibir as seguintes informações quando listar operações associadas a um perfil específico:
+
+* Data de início e fim quando a operação foi executada
+* Estado da operação
+* Código operação
+* Tipo de operação
+* Anfitrião que correu sobre
++
+.. Para listar as informações resumidas de todas as operações, use o seguinte comando:
+`smo operation list profile -profile profile_name-delimiter character [-quiet | -verbose]`
++
+Quando a opção -delimitador é especificada, o comando lista cada linha em uma linha separada e os atributos nessa linha são separados pelo caractere especificado.
+
+
+
+
+
+*Informações relacionadas*
+
+xref:reference_the_smosmsapoperation_list_command.adoc[O comando smo operation list]

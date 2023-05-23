@@ -1,0 +1,22 @@
+---
+permalink: unix-administration/task_deleting_profiles.html 
+sidebar: sidebar 
+keywords: delete, profile, anytime, contain, succesful, incomplete, backup, deleting, smo 
+summary: Você pode excluir um perfil a qualquer momento, desde que ele não contenha backups bem-sucedidos ou incompletos. Você pode excluir perfis que contêm backups liberados ou excluídos. 
+---
+= Eliminar perfis
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode excluir um perfil a qualquer momento, desde que ele não contenha backups bem-sucedidos ou incompletos. Você pode excluir perfis que contêm backups liberados ou excluídos.
+
+. Para excluir um perfil, digite este comando:
+`smo profile delete -profile profile_name`
+
+
+*Informações relacionadas*
+
+xref:reference_the_smosmsapprofile_delete_command.adoc[O comando smo profile delete]

@@ -1,0 +1,272 @@
+---
+permalink: unix-administration/task_setting_role-based_access_control_capabilities_and_roles.html 
+sidebar: sidebar 
+keywords: enable, role-based, access, control, rbac, snapmanager, snapdrive, capabilities, role, smo 
+summary: 'Depois de ativar o controle de acesso baseado em função (RBAC) para SnapManager usando o SnapDrive, você pode adicionar recursos e usuários de RBAC a funções para executar operações do SnapManager.' 
+---
+= Definir funções e recursos de controle de acesso baseados em função
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Depois de ativar o controle de acesso baseado em funções (RBAC) para SnapManager usando o SnapDrive, você pode adicionar recursos e usuários de RBAC a funções para executar operações do SnapManager.
+
+Você precisa criar um grupo no servidor do Data Fabric Manager e adicioná-lo aos sistemas de storage primário e secundário. Execute os seguintes comandos:
+
+* grupo dfm criar smo_grp
+* o grupo dfm adiciona smo_grpprimary_storage_system
+* o grupo dfm adiciona smo_grpsecondary_storage_system
+
+
+Use a interface da Web do Operations Manager ou a interface de linha de comando (CLI) do servidor Data Fabric Manager para modificar as funcionalidades e funções do RBAC.
+
+A tabela lista as funcionalidades de RBAC necessárias para executar operações do SnapManager:
+
+|===
+| Operações da SnapManager | Os recursos de RBAC são necessários quando a proteção de dados não está ativada | Os recursos de RBAC necessários quando a proteção de dados está ativada 
+
+
+ a| 
+Criar perfil ou atualizar perfil
+ a| 
+SD.Storage.Read (smo_grp)
+ a| 
+SD.Storage.Read (conjunto de dados SMO_profile)
+
+
+
+ a| 
+Proteção do perfil
+ a| 
+DFM.Database.Write (smo_grp)
+
+SD.Storage.Read (smo_grp)
+
+SD.Config.Read (smo_grp)
+
+SD.Config.Write (smo_grp)
+
+SD.Config.Delete (smo_grp)
+
+GlobalDataProtection
+ a| 
+Nenhum
+
+
+
+ a| 
+Criar cópia de segurança
+ a| 
+SD.Storage.Read (smo_grp)
+
+SD.Snapshot.Write (smo_grp)
+
+SD.Snapshot.Read (smo_grp)
+
+SD.Snapshot.Delete (smo_grp)
+ a| 
+SD.Storage.Read (conjunto de dados SMO_profile)
+
+SD.Snapshot.Write (conjunto de dados SMO_Profile)
+
+SD.Snapshot.Read (conjunto de dados SMO_Profile)
+
+SD.Snapshot.Delete (conjunto de dados SMO_profile)
+
+
+
+ a| 
+Criar cópia de segurança (com DBverify)
+ a| 
+SD.Storage.Read (smo_grp)
+
+SD.Snapshot.Write (smo_grp)
+
+SD.Snapshot.Read (smo_grp)
+
+SD.Snapshot.Delete (smo_grp)
+
+SD.Snapshot.Clone (smo_grp)
+ a| 
+SD.Storage.Read (conjunto de dados SMO_profile)
+
+SD.Snapshot.Write (conjunto de dados SMO_Profile)
+
+SD.Snapshot.Read (conjunto de dados SMO_Profile)
+
+SD.Snapshot.Delete (conjunto de dados SMO_profile)
+
+SD.snapshot.Clone (conjunto de dados SMO_profile)
+
+
+
+ a| 
+Criar cópia de segurança (com RMAN)
+ a| 
+SD.Storage.Read (smo_grp)
+
+SD.Snapshot.Write (smo_grp)
+
+SD.Snapshot.Read (smo_grp)
+
+SD.Snapshot.Delete (smo_grp)
+
+SD.Snapshot.Clone (smo_grp)
+ a| 
+SD.Storage.Read (conjunto de dados SMO_profile)
+
+SD.Snapshot.Write (conjunto de dados SMO_Profile)
+
+SD.Snapshot.Read (conjunto de dados SMO_Profile)
+
+SD.Snapshot.Delete (conjunto de dados SMO_profile)
+
+SD.snapshot.Clone (conjunto de dados SMO_profile)
+
+
+
+ a| 
+Restauração de backup
+ a| 
+SD.Storage.Read (smo_grp)
+
+SD.Snapshot.Write (smo_grp)
+
+SD.Snapshot.Read (smo_grp)
+
+SD.Snapshot.Delete (smo_grp)
+
+SD.Snapshot.Clone (smo_grp)
+
+SD.Snapshot.Restore (smo_grp)
+ a| 
+SD.Storage.Read (conjunto de dados SMO_profile)
+
+SD.Snapshot.Write (conjunto de dados SMO_Profile)
+
+SD.Snapshot.Read (conjunto de dados SMO_Profile)
+
+SD.Snapshot.Delete (conjunto de dados SMO_profile)
+
+SD.snapshot.Clone (conjunto de dados SMO_profile)
+
+SD.Snapshot.Restore (conjunto de dados SMO_Profile)
+
+
+
+ a| 
+Eliminar cópia de segurança
+ a| 
+SD.Snapshot.Delete (smo_grp)
+ a| 
+SD.Snapshot.Delete (conjunto de dados SMO_profile)
+
+
+
+ a| 
+Verificação da cópia de segurança
+ a| 
+SD.Storage.Read (smo_grp)
+
+SD.Snapshot.Read (smo_grp)
+
+SD.Snapshot.Clone (smo_grp)
+ a| 
+SD.Storage.Read (conjunto de dados SMO_profile)
+
+SD.Snapshot.Read (conjunto de dados SMO_Profile)
+
+SD.Snapshot.Clone (conjunto de dados SMO_profile)
+
+
+
+ a| 
+Suporte de cópia de segurança
+ a| 
+SD.Storage.Read (smo_grp)
+
+SD.Snapshot.Read (smo_grp)
+
+SD.Snapshot.Clone (smo_grp)
+ a| 
+SD.Storage.Read (conjunto de dados SMO_profile)
+
+SD.Snapshot.Read (conjunto de dados SMO_Profile)
+
+SD.Snapshot.Clone (conjunto de dados SMO_profile)
+
+
+
+ a| 
+Desmontar o backup
+ a| 
+SD.Snapshot.Clone (smo_grp)
+ a| 
+SD.Snapshot.Clone (conjunto de dados SMO_profile)
+
+
+
+ a| 
+Criar clone
+ a| 
+SD.Storage.Read (smo_grp)
+
+SD.Snapshot.Read (smo_grp)
+
+SD.Snapshot.Clone (smo_grp)
+ a| 
+SD.Storage.Read (conjunto de dados SMO_profile)
+
+SD.Snapshot.Read (conjunto de dados SMO_Profile)
+
+SD.snapshot.Clone (conjunto de dados SMO_profile)
+
+
+
+ a| 
+Eliminar clone
+ a| 
+SD.Snapshot.Clone (smo_grp)
+ a| 
+SD.Snapshot.Clone (conjunto de dados SMO_profile)
+
+
+
+ a| 
+Divisão de clones
+ a| 
+SD.Storage.Read (smo_grp)
+
+SD.Snapshot.Read (smo_grp)
+
+SD.Snapshot.Clone (smo_grp)
+
+SD.Snapshot.Delete (smo_grp)
+
+SD.Storage.Write (smo_grp)
+ a| 
+SD.Storage.Read (conjunto de dados SMO_profile)
+
+SD.Snapshot.Read (conjunto de dados SMO_Profile)
+
+SD.snapshot.Clone (conjunto de dados SMO_profile)
+
+SD.Snapshot.Delete (conjunto de dados SMO_profile)
+
+SD.Storage.Write (conjunto de dados SMO_Profile)
+
+|===
+Para obter detalhes sobre como definir recursos RBAC, consulte o _Guia de administração do Gerenciador de operações do OnCommand Unified Manager_.
+
+. Acesse o console do Operations Manager.
+. No menu Configuração, selecione *funções*.
+. Selecione uma função existente ou crie uma nova.
+. Para atribuir operações a seus recursos de armazenamento de banco de dados, clique em *Adicionar capacidades*.
+. Na página Editar configurações de função, para salvar suas alterações na função, clique em *Atualizar*.
+
+
+*Informações relacionadas*
+
+http://support.netapp.com/documentation/productsatoz/index.html["_OnCommand Unified Manager Operations Manager Administration Guide_: [mysupport.netapp.com/documentation/productsatoz/index.html\](https://mysupport.netapp.com/documentation/productsatoz/index.html)"]

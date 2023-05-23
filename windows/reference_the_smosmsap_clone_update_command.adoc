@@ -1,0 +1,69 @@
+---
+permalink: windows/reference_the_smosmsap_clone_update_command.html 
+sidebar: sidebar 
+keywords: command, update, information, clone, comment, smo 
+summary: Este comando atualiza informações sobre o clone. Você pode atualizar o comentário. 
+---
+= O comando smo clone update
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Este comando atualiza informações sobre o clone. Você pode atualizar o comentário.
+
+
+
+== Sintaxe
+
+[listing]
+----
+
+        smo clone update
+-profile profile_name
+\[-label label \| -id id\]
+-comment  commment_text
+\[-quiet \| -verbose\]
+----
+
+
+== Parâmetros
+
+* *-profile profile_name*
++
+Especifica o nome do perfil que contém o clone que você deseja atualizar. O perfil contém o identificador da base de dados e outras informações da base de dados.
+
+* *-id id*
++
+Especifica o ID do clone. O ID é gerado pelo SnapManager quando você cria um clone. Use o comando smo clone list para exibir o ID de cada clone.
+
+* * etiqueta de etiqueta*
++
+Especifica o rótulo para o clone.
+
+* *-comentário*
++
+Mostra o comentário inserido na criação do clone. Este é um parâmetro opcional.
+
+* *-silencioso*
++
+Exibe apenas mensagens de erro no console. O padrão é exibir mensagens de erro e aviso.
+
+* *-verbose*
++
+Exibe mensagens de erro, aviso e informativas no console.
+
+
+
+
+
+== Exemplo de comando
+
+O exemplo a seguir atualiza o comentário clone.
+
+[listing]
+----
+smo clone update -profile anson.pcrac5
+-label clone_pcrac51_20080820141624EDT -comment See updated clone
+----

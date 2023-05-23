@@ -1,0 +1,41 @@
+---
+permalink: unix-administration/task_splitting_a_clone_on_a_primary_or_secondary_storage.html 
+sidebar: sidebar 
+keywords: clone, split, command, complete, metadata, repository, primary, secondary 
+summary: Você pode usar o comando clone split para dividir o clone. Após a conclusão da divisão de clones, os metadados do clone são removidos do banco de dados do repositório e o backup associado ao clone pode ser excluído ou liberado. 
+---
+= Divisão de um clone em storage primário ou secundário
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode usar o comando clone split para dividir o clone. Após a conclusão da divisão de clones, os metadados do clone são removidos do banco de dados do repositório e o backup associado ao clone pode ser excluído ou liberado.
+
+O novo perfil criado após a operação de divisão bem-sucedida é usado para gerenciar o clone dividido. O novo perfil será como qualquer outro perfil existente no SnapManager. Você pode usar esse perfil para executar operações de backup, restauração e clone.
+
+Além disso, você também pode configurar a notificação por e-mail para o novo perfil. Isso permite que o administrador do banco de dados seja notificado sobre o status da operação do banco de dados realizada usando o perfil.
+
+
+NOTE: O SnapManager suporta a operação de divisão quando realizada apenas em um FlexClone.
+
+Se a operação de divisão falhar, uma mensagem de erro apropriada com o motivo da falha é exibida. O estado de várias operações também é apresentado no registo de operações. Por exemplo:
+
+[listing]
+----
+--[ INFO] The following operations were completed:
+Clone Split : Success
+Profile Create : Failed
+Clone Detach : Success
+----
+Opcionalmente, você pode coletar os arquivos de despejo após uma operação de divisão de clones bem-sucedida ou com falha.
+
+
+NOTE: Depois de inserir o comando clone split, você não deve parar o servidor SnapManager até que a operação clone split tenha iniciado.
+
+
+NOTE: O SnapManager gera o perfil mesmo que você não forneça nenhum valor para a conta Oracle (osaccount e osgroup).
+
+. Digite o seguinte comando: smo clone split -profileclone-profile-hostname [-labelclone-label | -idclone-id]-split-labelsplit-operation-label-commentnew-profilenew-profile address1 address2 address1 address2
+

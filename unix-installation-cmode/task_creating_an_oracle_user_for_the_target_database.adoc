@@ -1,0 +1,26 @@
+---
+permalink: unix-installation-cmode/task_creating_an_oracle_user_for_the_target_database.html 
+sidebar: sidebar 
+keywords: oracle, database, user, require, snapmanager, operation, sysdba 
+summary: Um usuário de banco de dados Oracle é necessário para fazer login no banco de dados e executar operações do SnapManager. Você deve criar esse usuário com o privilégio sysdba se um usuário com o privilégio sysdba não existir para o banco de dados de destino. 
+---
+= Criando um usuário de banco de dados Oracle para o banco de dados de destino
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um usuário de banco de dados Oracle é necessário para fazer login no banco de dados e executar operações do SnapManager. Você deve criar esse usuário com o privilégio _sysdba_ se um usuário com o privilégio _sysdba_ não existir para o banco de dados de destino.
+
+O SnapManager pode usar qualquer usuário Oracle com o privilégio _sysdba_ que existe para o banco de dados de destino. Por exemplo, o SnapManager pode usar o usuário padrão _sys_. No entanto, mesmo que o usuário exista, você pode criar um novo usuário para o banco de dados de destino e atribuir o privilégio _sysdba_.
+
+Você também pode usar o método de autenticação do sistema operacional (os), no qual o sistema operacional permite que o banco de dados Oracle use as credenciais que são mantidas pelo sistema operacional para autenticar os usuários para fazer login no banco de dados e executar operações do SnapManager. Se você estiver autenticado pelo SO, poderá se conetar ao banco de dados Oracle sem especificar um nome de usuário ou senha.
+
+. Faça login no SQL *Plus: Sqlplus '/ as sysdba'
+. Criar um novo usuário com uma senha de administrador: Criar useruser_name identificado por admin_password;
++
+user_name é o nome do usuário que você está criando e admin_password é a senha que você deseja atribuir ao usuário.
+
+. Atribuir o privilégio sysdba ao novo usuário Oracle: Conceder sysdba para user_name;
+

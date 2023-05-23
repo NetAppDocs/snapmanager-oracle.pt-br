@@ -1,0 +1,20 @@
+---
+permalink: unix-administration/concept_supported_scripts.html 
+sidebar: sidebar 
+keywords: asmmain.sh, asmquerydisk.sh, script, grid, group, user 
+summary: Os scripts asmmain.sh e asmquerydisk.sh permitem que você altere o usuário, o grupo e o usuário da grade, todos usados para consultar os discos ASM. Os scripts devem sempre ser executados a partir da raiz. 
+---
+= Scripts compatíveis
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Os scripts asmmain.sh e asmquerydisk.sh permitem que você altere o usuário, o grupo e o usuário da grade, todos usados para consultar os discos ASM. Os scripts devem sempre ser executados a partir da raiz.
+
+O asmmain.sh é o arquivo de script principal chamado de qualquer operação que adicione ou exclua dispositivos. O script asmmain.sh chama outro script internamente, que precisa ser executado a partir da raiz que tem credenciais de grade oracle. Este script consulta os dispositivos do grupo de discos ASM e, em seguida, adiciona essas entradas no arquivo initasmdisk com a permissão e a propriedade dos dispositivos. Você pode alterar as permissões e a propriedade deste arquivo com base no seu ambiente e no padrão regex que é usado para combinar apenas o /dev/mapper/*P1.
+
+O script asmquerydisk.sh é usado para consultar a lista de discos, que é usada para criar o grupo de discos ASM. Você deve atribuir valores a ORACLE_BASE, ORACLE_HOME e ORACLE_SID, dependendo da configuração.
+
+Os scripts estão localizados em /opt/NetApp/smo/plugins/examples/noasmlib. No entanto, esses scripts devem ser movidos para /opt/NetApp/smo/plugins/noasmlib antes de iniciar o servidor SnapManager para Oracle no host.

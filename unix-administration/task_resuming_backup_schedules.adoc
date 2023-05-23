@@ -1,0 +1,19 @@
+---
+permalink: unix-administration/task_resuming_backup_schedules.html 
+sidebar: sidebar 
+keywords: administrator, option, resume, suspend, backup, schedule, smo 
+summary: Os administradores têm a opção de retomar o agendamento de backup suspenso. 
+---
+= Retomar as agendas de cópia de segurança
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Os administradores têm a opção de retomar o agendamento de backup suspenso.
+
+Se você tentar retomar as programações ativas, poderá encontrar a mensagem de erro: "Não é possível retomar: Programar <schedulename> já no estado de retomada".
+
+. Para retomar a programação de backup suspensa, digite este comando: smo schedulename [-quiet | -verbose]
+

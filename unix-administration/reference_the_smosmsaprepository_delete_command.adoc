@@ -1,0 +1,101 @@
+---
+permalink: unix-administration/reference_the_smosmsaprepository_delete_command.html 
+sidebar: sidebar 
+keywords: command, delete, repository, store, database, profile, associate, credentials, smo 
+summary: Este comando exclui um repositório usado para armazenar perfis de banco de dados e credenciais associadas. Você pode excluir um repositório somente se não houver perfis no repositório. 
+---
+= O comando smo repositório delete
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Este comando exclui um repositório usado para armazenar perfis de banco de dados e credenciais associadas. Você pode excluir um repositório somente se não houver perfis no repositório.
+
+
+
+== Sintaxe
+
+[listing]
+----
+
+        smo repository delete
+-repository
+-port repo_port
+-dbname repo_service_name
+-host repo_host
+-login -username repo_username
+[-force] [-noprompt]
+[-quiet | -verbose]
+----
+
+
+== Parâmetros
+
+* *-repositório*
++
+As opções que seguem -repositório especificam os detalhes do banco de dados para o repositório.
+
+* *-port repo_port*
++
+Especifica o número da porta TCP usado para acessar o banco de dados que armazena o repositório.
+
+* *-dbname repo_service_name*
++
+Especifica o nome do banco de dados que armazena o repositório. Use o nome global ou o SID.
+
+* *-host repo_host*
++
+Especifica o nome ou endereço IP do computador host no qual o banco de dados do repositório é executado.
+
+* *-login*
++
+Inicia os detalhes de login do repositório.
+
+* *-username repo_username*
++
+Especifica o nome de usuário necessário para acessar o banco de dados que armazena o repositório.
+
+* *-força*
++
+Tenta forçar a exclusão do repositório, mesmo que haja operações incompletas. O SnapManager emite um prompt se houver operações incompletas, perguntando se você tem certeza de que deseja excluir o repositório.
+
+* *-noprompt*
++
+Não solicita antes de excluir o repositório. Usar a opção -noprompt garante que o prompt não apareça, facilitando a exclusão de repositórios usando um script.
+
+* *-silencioso*
++
+Exibe apenas mensagens de erro no console. O padrão é exibir mensagens de erro e aviso.
+
+* *-verbose*
++
+Exibe mensagens de erro, aviso e informativas no console.
+
+
+
+
+
+== Exemplo de comando
+
+O exemplo a seguir exclui o repositório no banco de dados SALESDB.
+
+[listing]
+----
+smo repository delete -repository -port 1521 -dbname smorep
+-host nila -login -username smofresno -force -verbose
+This command will delete repository "smofresno@smorep/nila".
+Any resources maintained by the repository must be cleaned up manually.
+This may include snapshots, mounted backups, and clones.
+Are you sure you wish to proceed (Y/N)?Y
+[ INFO] SMO-09201: Dropping existing schema as smofresno
+  on jdbc:oracle:thin:@//nila:1521/smorep.
+[ INFO] SMO-13048: Repository Delete Operation Status: SUCCESS
+[ INFO] SMO-13049: Elapsed Time: 0:00:06.372
+[ INFO] SMO-20010: Synchronizing mapping for profiles in
+   repository "smofresno@smorep/nila:1521".
+[ WARN] SMO-20029: No repository schema exists in "smofresno@smorep/nila:1521".
+ Deleting all profile mappings for this repository.
+[ INFO] SMO-20012: Deleted stale mapping for profile "TESTPASS".
+----

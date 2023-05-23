@@ -1,0 +1,57 @@
+---
+permalink: unix-administration/reference_the_smosmsap_clone_splitestimate_command.html 
+sidebar: sidebar 
+keywords: command, enable, clone, split, amount, storage, consume, estimate 
+summary: Este comando permite visualizar a quantidade dividida clone de estimativa de storage consumida. 
+---
+= O comando smo clone split-estimate
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Este comando permite visualizar a quantidade dividida clone de estimativa de storage consumida.
+
+
+
+== Sintaxe
+
+[listing]
+----
+
+        smo clone split-estimate
+-profile profile
+\[-host hostname\]
+\[-label clone-label | -id clone-id\]
+\[-quiet \| -verbose\]
+----
+
+
+== Parâmetros
+
+* *-perfil de perfil*
++
+Especifica o nome do perfil do clone.
+
+* *-host hostname*
++
+Especifica o nome do host no qual o clone existe.
+
+* *-label clone-label*
++
+Especifica o nome do rótulo gerado pelo processo de clone.
+
+* *-id clone-id*
++
+Especifica o ID exclusivo gerado pelo processo de clone.
+
+* *-silencioso*
++
+Exibe apenas mensagens de erro no console. O padrão é exibir mensagens de erro e aviso.
+
+* *-verbose*
++
+Exibe mensagens de erro, aviso e informativas no console.
+
+

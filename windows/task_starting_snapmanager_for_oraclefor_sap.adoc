@@ -1,0 +1,20 @@
+---
+permalink: windows/task_starting_snapmanager_for_oraclefor_sap.html 
+sidebar: sidebar 
+keywords: snapmanager, startup, section, list, task, oracle, learn 
+summary: A seção de inicialização do SnapManager lista as tarefas que você executa quando você inicia o SnapManager. Use esta seção também se você está apenas aprendendo sobre o SnapManager. 
+---
+= Iniciando o SnapManagerfor Oracle
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A seção de inicialização do SnapManager lista as tarefas que você executa quando você inicia o SnapManager. Use esta seção também se você está apenas aprendendo sobre o SnapManager.
+
+Antes de usar o SnapManager, você deve ter executado as seguintes ações:
+
+* Transferido e instalado o software SnapManager.
+* Determinado se você usará a interface gráfica do usuário ou a interface de linha de comando.
+

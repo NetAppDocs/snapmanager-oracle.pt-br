@@ -1,0 +1,56 @@
+---
+permalink: unix-administration/concept_cloning_methods.html 
+sidebar: sidebar 
+keywords: clone, database, method, create, operation, lun 
+summary: Você pode clonar um banco de dados usando um de dois métodos. O método escolhido afeta a operação de criação de clone. 
+---
+= Métodos de clonagem
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode clonar um banco de dados usando um de dois métodos. O método escolhido afeta a operação de criação de clone.
+
+A tabela a seguir descreve os métodos de clonagem e seu efeito na operação criar clone e sua opção -reserva. Um LUN pode ser clonado usando qualquer um dos métodos.
+
+|===
+| Método de clonagem 
+
+
+| Descrição 
+
+
+| clone create -reserve 
+
+
+ a| 
+Clonagem de LUN
+
+
+
+ a| 
+Um novo LUN clone é criado dentro do mesmo volume.
+
+
+
+ a| 
+Quando -reservar para um LUN é definido como sim, o espaço é reservado para o tamanho total do LUN dentro do volume.
+
+
+
+ a| 
+Clonagem de volume
+
+
+
+ a| 
+Um novo FlexClone é criado e o clone LUN existe dentro do novo volume de clone. Utiliza a tecnologia FlexClone.
+
+
+
+ a| 
+Quando -reservar para um volume é definido como sim, o espaço é reservado para o tamanho total do volume dentro do agregado.
+
+|===

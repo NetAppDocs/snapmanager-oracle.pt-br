@@ -1,0 +1,23 @@
+---
+permalink: unix-administration/task_viewing_status_of_clone_split_process.html 
+sidebar: sidebar 
+keywords: view, progress, split, process, start, smo 
+summary: Pode ver o progresso do processo de divisão iniciado. 
+---
+= Exibindo o status do processo de divisão de clones
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Pode ver o progresso do processo de divisão iniciado.
+
+. Para ver o progresso do processo de divisão de clones, digite o seguinte comando:
+`smo clone split-status -profileprofile [-hosthostname] [-labelsplit-label | -idsplit-id] [-quiet | -verbose]`
+
+
+[listing]
+----
+smo clone split-status -profile p1 -id 8abc01ec0e78f3e2010e78f3fdd00001
+----

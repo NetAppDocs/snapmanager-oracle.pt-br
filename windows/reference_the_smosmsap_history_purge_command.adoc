@@ -1,0 +1,89 @@
+---
+permalink: windows/reference_the_smosmsap_history_purge_command.html 
+sidebar: sidebar 
+keywords: command, enable, delete, history, operation, smo, purge 
+summary: Este comando permite que você exclua o histórico da operação do SnapManager. 
+---
+= O comando smo history purge
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Este comando permite que você exclua o histórico da operação do SnapManager.
+
+
+
+== Sintaxe
+
+[listing]
+----
+
+        smo history purge
+-profile \{-name profile_name \[profile_name1, profile_name2\] \| -all
+-repository
+-login \[-password repo_password\]
+-username repo_username
+-host repo_host
+-dbname repo_dbname
+-port repo_port}
+-operation \{-operations operation_name \[operation_name1, operation_name2\] \| -all\}
+\[-quiet \| -verbose\]
+----
+
+
+== Parâmetros
+
+* *-perfil de perfil*
++
+Especifica o nome do perfil. Esse nome pode ter até 30 carateres e deve ser único dentro do host.
+
+* *-repositório*
++
+As opções que seguem -repositório especificam os detalhes do banco de dados que armazena o perfil.
+
+* *-dbname repo_dbname*
++
+Especifica o nome do banco de dados que armazena o perfil. Use o nome global ou o SID.
+
+* *-host repo_host*
++
+Especifica o nome ou endereço IP do computador host no qual o banco de dados do repositório é executado.
+
+* *-login*
++
+Inicia os detalhes de login do repositório.
+
+* *-username repo_username*
++
+Especifica o nome de usuário necessário para acessar o banco de dados que armazena o repositório.
+
+* *-port repo_port*
++
+Especifica o número da porta TCP usado para acessar o banco de dados que armazena o repositório.
+
+* *-operation_name [operation_name1, operation_name2] | -all*
++
+Especifica a operação SnapManager para a qual você configura o histórico.
+
+* *-silencioso*
++
+Exibe apenas mensagens de erro no console. O padrão é exibir mensagens de erro e aviso.
+
+* *-verbose*
++
+Exibe mensagens de erro, aviso e informativas no console.
+
+
+
+
+
+== Exemplo de comando
+
+[listing]
+----
+
+          smo  history purge -profile -name PROFILE1 -operation -operations backup
+ -verbose
+----

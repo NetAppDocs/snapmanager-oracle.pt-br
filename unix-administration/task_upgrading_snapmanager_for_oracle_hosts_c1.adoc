@@ -1,0 +1,79 @@
+---
+permalink: unix-administration/task_upgrading_snapmanager_for_oracle_hosts_c1.html 
+sidebar: sidebar 
+keywords: upgrade, all, exist, host, latest, version, snapmanager, simultaneously, downtime, upgrading, command-line, interface, cli, smo, chmod 
+summary: Você pode atualizar todos os hosts existentes para usar a versão mais recente do SnapManager. Todos os hosts são atualizados simultaneamente. No entanto, isso pode resultar em inatividade de todos os hosts do SnapManager e das operações agendadas durante esse tempo. 
+---
+= Atualizando os hosts do SnapManager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode atualizar todos os hosts existentes para usar a versão mais recente do SnapManager. Todos os hosts são atualizados simultaneamente. No entanto, isso pode resultar em inatividade de todos os hosts do SnapManager e das operações agendadas durante esse tempo.
+
+. Faça login no sistema host como usuário raiz.
+. Na interface de linha de comando (CLI), navegue até o local onde você baixou o arquivo de instalação.
+. Se o arquivo não for executável, altere as permissões:
+`chmod 544 netapp.smo*`
+. Parar o servidor SnapManager:
+`smo_server stop`
+. Dependendo do host UNIX, instale o SnapManager:
++
+|===
+| Se o sistema operativo for... | Então corra... 
+
+
+ a| 
+*Solaris (SPARC64)*
+ a| 
+
+
+
+ a| 
+*Solaris (x86_64)*
+ a| 
+
+
+
+ a| 
+*AIX (PPC64)*
+ a| 
+
+
+
+ a| 
+*Linux x86*
+ a| 
+
+
+
+ a| 
+*Linux x64*
+ a| 
+
+|===
+. Na página Introdução, pressione *Enter* para continuar.
++
+A seguinte mensagem é exibida: SnapManager existente para Oracle detetado.
+
+. Pressione *Enter*.
+. No prompt de comando, execute o seguinte:
++
+.. Pressione *Enter* para aceitar o valor padrão para o usuário do sistema operacional.
+.. Introduza o valor correto para o grupo do sistema operativo ou prima *Enter* para aceitar o valor predefinido.
+.. Digite o valor correto para o tipo de inicialização do servidor ou pressione *Enter* para aceitar o valor padrão.
+
+
++
+É apresentado o resumo da configuração.
+
+. Pressione *Enter* para continuar.
++
+A seguinte mensagem é exibida: A desinstalação do SnapManager existente para Oracle foi iniciada.
+
++
+A desinstalação está concluída e a versão mais recente do SnapManager está instalada.
+
+

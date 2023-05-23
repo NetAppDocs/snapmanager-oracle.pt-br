@@ -1,0 +1,70 @@
+---
+permalink: unix-administration/reference_the_smosmsapcmdfile_command.html 
+sidebar: sidebar 
+keywords: cmdfile, command, run, shell, host, limit, number, character, appear, line, smo 
+summary: Você pode usar o comando cmdfile para executar qualquer comando se o shell em seu host limitar o número de carateres que podem aparecer em uma linha de comando. 
+---
+= O comando smo cmdfile
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode usar o comando cmdfile para executar qualquer comando se o shell em seu host limitar o número de carateres que podem aparecer em uma linha de comando.
+
+
+
+== Sintaxe
+
+[listing]
+----
+
+        smo cmdfile
+-file file_name
+\[-quiet \| -verbose\]
+----
+Você pode incluir o comando em um arquivo de texto e usar o comando mmo cmdfile para executar o comando. Você pode adicionar apenas um comando em um arquivo de texto. Você não deve incluir smo na sintaxe de comando.
+
+
+NOTE: O comando smo cmdfile substitui o comando smo pfile. O ficheiro mmo cmdfile não é compatível com o comando mmo pfile.
+
+
+
+== Parâmetros
+
+* *-file file_name*
++
+Especifica o caminho para o arquivo de texto que contém o comando que deseja executar.
+
+* *-silencioso*
++
+Especifica que somente mensagens de erro são exibidas no console. O padrão é exibir mensagens de erro e aviso.
+
+* *-verbose*
++
+Especifica que mensagens de erro, aviso e informações são exibidas no console.
+
+
+
+
+
+== Exemplo
+
+Este exemplo cria um perfil incluindo o comando profile create no command.txt localizado em /tmp. Você pode então executar o comando mmo cmdfile.
+
+O arquivo de texto contém as seguintes informações:
+
+[listing]
+----
+profile create -profile SALES1 -repository -dbname SNAPMGRR
+-login -username server1_user -password ontap -port 1521 -host server1
+-database -dbname SMO -sid SMO -login -username sys -password oracle -port 1521
+-host Host2 -osaccount oracle -osgroup db2
+----
+Agora você pode criar o perfil executando o comando mmo cmdfile com o arquivo command.txt:
+
+[listing]
+----
+smo cmdfile -file /tmp/command.txt
+----

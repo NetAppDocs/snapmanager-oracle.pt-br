@@ -1,0 +1,33 @@
+---
+permalink: unix-installation-7mode/task_verifying_database_backups.html 
+sidebar: sidebar 
+keywords: verifym backup, database, backed-up, file, corrupt, unix 
+summary: Você pode verificar o backup do banco de dados para garantir que os arquivos de backup não estejam corrompidos. 
+---
+= Verificando backups de bancos de dados
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode verificar o backup do banco de dados para garantir que os arquivos de backup não estejam corrompidos.
+
+Se você não selecionou a caixa de seleção *verificar backup usando o utilitário Oracle DBVERIFY* ao criar um backup, execute estas etapas manualmente para verificar o backup. No entanto, se você selecionou a caixa de seleção, o SnapManager verifica automaticamente o backup.
+
+. Na árvore *Repositories*, selecione o perfil.
+. Clique com o botão direito do rato no backup que pretende verificar e selecione *verificar*.
+. Clique em *Finish*.
++
+Se a operação falhar, clique em *Detalhes da operação* para ver o que causou a falha da operação.
+
++
+Na árvore *Repositório*, clique com o botão direito do Mouse no backup e clique em *Propriedades* para exibir os resultados da operação de verificação.
+
+
+
+Você pode usar arquivos de backup para executar operações de restauração. Para obter informações sobre como executar operações de restauração usando a interface de usuário (UI) do SnapManager, consulte _Ajuda on-line_. Se você quiser usar a interface de linha de comando (CLI) para executar operações de restauração, consulte o _SnapManager for Oracle Administration Guide for UNIX_.
+
+*Informações relacionadas*
+
+https://library.netapp.com/ecm/ecm_download_file/ECMP12471546["Guia de administração do SnapManager 3,4 para UNIX"]

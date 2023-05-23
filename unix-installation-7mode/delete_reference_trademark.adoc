@@ -1,0 +1,13 @@
+---
+permalink: unix-installation-7mode/delete_reference_trademark.html 
+sidebar: sidebar 
+keywords: trademark 
+summary: Informações sobre marcas comerciais 
+---
+= Informações sobre marcas comerciais
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+NetApp FlexCache FlexVol MultiStore ONTAP SANtricity SnapCenter SnapIntegrator SnapMirror SnapRestore StorageGRID NetApp, o logotipo da NetApp FlexClone ONTAP NetApp Insight RAID DP SecureShare SnapCopy SnapLock SnapMover SnapValidator Tech OnTap, Go further, faster, AltaVault FlexArray FlexPod MetroCluster OnCommand RAID-TEC ONTAP SnapDrive SnapManager SnapProtect SnapVault WAFL, ASUP, AutoSupport, campanha Express, Cloud ONTAP, Clustered Data ONTAP, Data ONTAP, DataMotion, Fitness, Flash Accel Todas as outras marcas ou produtos são marcas comerciais ou marcas registradas de seus respetivos proprietários e devem ser tratadas como tal. Uma lista atual de marcas comerciais da NetApp está disponível na Web em http://www.netapp.com/us/legal/netapptmlist.aspx[].

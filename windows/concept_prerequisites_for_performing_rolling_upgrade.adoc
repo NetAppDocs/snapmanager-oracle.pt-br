@@ -1,0 +1,50 @@
+---
+permalink: windows/concept_prerequisites_for_performing_rolling_upgrade.html 
+sidebar: sidebar 
+keywords: perform, roll, upgrade, prerequisite, environment, certain, requirement 
+summary: Antes de realizar a atualização contínua, você deve garantir que seu ambiente atenda a certos requisitos. 
+---
+= Pré-requisitos para executar a atualização contínua
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de realizar a atualização contínua, você deve garantir que seu ambiente atenda a certos requisitos.
+
+* Se você estiver usando qualquer versão anterior ao SnapManager 3,1 e quiser executar uma atualização contínua para o SnapManager 3,3 ou posterior, primeiro será necessário atualizar para o 3,2 e, em seguida, para a versão mais recente.
++
+Você pode atualizar diretamente do SnapManager 3,2 para o SnapManager 3,3 ou posterior.
+
+* É necessário fazer backup de scripts externos usados para executar qualquer proteção ou retenção de dados externa.
+* A versão do SnapManager para a qual você deseja atualizar deve estar instalada.
++
+
+NOTE: Se você estiver atualizando de qualquer versão anterior ao SnapManager 3,1 para o SnapManager 3,3 ou posterior, primeiro instale o SnapManager 3,2 e execute uma atualização contínua. Depois de atualizar para o 3,2, você pode instalar o SnapManager 3,3 ou posterior e executar outra atualização contínua para o SnapManager 3,3 ou posterior.
+
+* A versão do SnapDrive para Windows suportada com a versão do SnapManager para a qual pretende atualizar tem de estar instalada.
++
+Para obter informações sobre a instalação do SnapDrive, consulte o conjunto de documentação do SnapDrive.
+
+* O banco de dados do repositório deve ser feito backup.
+* A quantidade de utilização do repositório SnapManager deve ser mínima.
+* Se o host a ser atualizado estiver usando um repositório, as operações do SnapManager não devem ser executadas nos outros hosts que estão usando o mesmo repositório.
++
+As operações agendadas ou em execução nos outros hosts aguardarão a conclusão da atualização contínua.
+
+* Os perfis que apontam para o mesmo banco de dados do repositório devem ser criados com nomes diferentes nos hosts do servidor SnapManager.
++
+Se você usar perfis com o mesmo nome, a atualização contínua envolvendo esse banco de dados do repositório falhará sem aviso prévio.
+
+* As operações do SnapManager não devem ser executadas no host que está sendo atualizado.
+
+
+
+NOTE: A atualização contínua é executada por mais tempo, à medida que o número de backups dos hosts sendo atualizados juntos aumenta. A duração da atualização pode variar dependendo do número de perfis e backups associados a um determinado host.
+
+*Informações relacionadas*
+
+xref:task_installing_snapmanager_for_oracle.adoc[Instalando o SnapManager para Oracle]
+
+http://mysupport.netapp.com/["Documentação no site de suporte da NetApp: Mysupport.NetApp.com"]

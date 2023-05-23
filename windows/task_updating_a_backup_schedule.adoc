@@ -1,0 +1,17 @@
+---
+permalink: windows/task_updating_a_backup_schedule.html 
+sidebar: sidebar 
+keywords: view, list, schedule, operation, update, scheduling, backup, updating 
+summary: Você pode visualizar uma lista de operações agendadas e atualizá-las, se necessário. Você pode atualizar a frequência de agendamento, a hora de início da programação, a expressão de cronstring e o usuário que agendou o backup. 
+---
+= Atualizando um agendamento de backup
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode visualizar uma lista de operações agendadas e atualizá-las, se necessário. Você pode atualizar a frequência de agendamento, a hora de início da programação, a expressão de cronstring e o usuário que agendou o backup.
+
+. Para atualizar a programação para um backup, digite este comando: smo schedule update -profile_name-schedulename [-schedule-commentschedulename
+

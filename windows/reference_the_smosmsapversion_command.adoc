@@ -1,0 +1,50 @@
+---
+permalink: windows/reference_the_smosmsapversion_command.html 
+sidebar: sidebar 
+keywords: run, version, command, determine, snapmanager, local, host, smo 
+summary: Você pode executar o comando version para determinar qual versão do SnapManager você está executando em seu host local. 
+---
+= O comando smo version
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode executar o comando version para determinar qual versão do SnapManager você está executando em seu host local.
+
+
+
+== Sintaxe
+
+[listing]
+----
+
+        smo version
+\[-quiet \| -verbose\]
+----
+
+
+== Parâmetros
+
+* *-silencioso*
++
+Exibe apenas mensagens de erro no console. O padrão é exibir mensagens de erro e aviso.
+
+* *-verbose*
++
+Exibe a data de construção e o conteúdo de cada perfil. Também exibe mensagens de erro, aviso e informativas no console.
+
+
+
+
+
+== Exemplo do comando version
+
+O exemplo a seguir exibe a versão do SnapManager:
+
+[listing]
+----
+smo version
+SnapManager for Oracle Version: 3.3.1
+----

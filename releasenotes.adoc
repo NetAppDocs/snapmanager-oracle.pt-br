@@ -1,0 +1,13 @@
+---
+permalink: releasenotes.html 
+sidebar: sidebar 
+keywords: release, notes, new, features, fixed, issues, known, limitations, snapmanager, oracle 
+summary: Descreve novos recursos, notas de atualização, problemas corrigidos, limitações conhecidas e problemas conhecidos. 
+---
+= Notas de lançamento do SnapManager 3.4.2 para Oracle
+:allow-uri-read: 
+
+
+A link:https://library.netapp.com/ecm/ecm_get_file/ECMLP2849192["Notas de lançamento do SnapManager 3.4.2 para Oracle"] descreve novos recursos, notas de atualização, problemas corrigidos, limitações conhecidas e problemas conhecidos.
+
+É necessário iniciar sessão no site de suporte da NetApp para aceder às Notas de versão.

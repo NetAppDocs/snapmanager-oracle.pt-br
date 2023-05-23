@@ -1,0 +1,40 @@
+---
+permalink: windows/reference_the_smosmsap_schedule_delete_command.html 
+sidebar: sidebar 
+keywords: command, delete, backup, schedule, smo 
+summary: Este comando exclui um agendamento de backup quando não for mais necessário. 
+---
+= O comando smo schedule delete
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Este comando exclui um agendamento de backup quando não for mais necessário.
+
+
+
+== Sintaxe
+
+[listing]
+----
+
+        smo schedule delete
+-profile profile_name
+-schedule-name schedule_name
+\[-quiet \| -verbose\]
+----
+
+
+== Parâmetros
+
+* *-profile profile_name*
++
+Especifica o nome do perfil relacionado ao banco de dados que você deseja excluir um agendamento de backup. O perfil contém o identificador da base de dados e outras informações da base de dados.
+
+* *-schedule-nome schedule_name*
++
+Especifica o nome da programação fornecido durante a criação de uma agenda de backup.
+
+

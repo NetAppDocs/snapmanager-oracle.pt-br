@@ -1,0 +1,68 @@
+---
+permalink: windows/task_order_of_performing_operations.html 
+sidebar: sidebar 
+keywords: snapmanager, enable, perform, operation, backup, cloning, clone, operation, order, perform 
+summary: Com o SnapManager, você realiza várias operações, como criação de perfis, realização de backups e clonagem. Estas operações devem ser efetuadas numa ordem específica. 
+---
+= Ordem de execução das operações
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Com o SnapManager, você realiza várias operações, como criação de perfis, realização de backups e clonagem. Estas operações devem ser efetuadas numa ordem específica.
+
+. Crie um perfil em um repositório existente usando o comando smo profile create.
++
+
+NOTE: O usuário Oracle especificado para o banco de dados de destino deve ter sysdba Privileges.
+
++
+O exemplo a seguir mostra o comando para criar um perfil:
+
++
+[listing]
+----
+smo profile create -profile prof1 -profile-password prof1cred
+-repository -dbname HR1 -login -username admin -host server1 -port 1521
+-database -dbname dedb -login -username db_oper2
+-password dbpw1 -host server1 -port 1521
+----
+. Crie um backup em um perfil existente usando o comando smo backup create.
++
+O exemplo a seguir mostra o comando para criar um backup:
+
++
+[listing]
+----
+smo backup create -profile prof1 -full -offline -label full_backup_prof1 -force
+----
+. Restaure e recupere um backup de banco de dados no armazenamento primário usando o comando smo backup restore.
++
+O exemplo a seguir mostra o comando para restaurar um backup:
+
++
+[listing]
+----
+smo backup restore -profile prof1 -label full_backup_prof1
+-complete -recover -alllogs
+----
+. Crie uma especificação de clone usando o comando smo clone template.
++
+Você pode usar o assistente Clone na interface gráfica do usuário (GUI) para criar uma especificação de clone de modelo. Você também pode criar o arquivo de especificação clone usando um editor de texto.
+
+. Clonar um banco de dados com um backup existente usando o comando smo clone create.
++
+Você precisa ter uma especificação de clone existente ou criar uma especificação de clone para especificar as especificações de storage e banco de dados do clone.
+
++
+O exemplo a seguir mostra o comando para criar um clone:
+
++
+[listing]
+----
+smo clone create -profile prof1 -backup-label full_backup_prof1
+-newsid clone1 -label prof1_clone -clonespec C:\\clone_spec\\prof1_clonespec.xml
+----
+
